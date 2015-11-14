@@ -1,8 +1,12 @@
 #ifndef UsbConnection_H
 #define UsbConnection_H
 
+#include <cstdint>
+#include <cstring>
 #include <ftdi.h>
 #include <string>
+#include <unistd.h>
+#include <vector>
 
 namespace piagnostics {
 
@@ -10,18 +14,19 @@ namespace piagnostics {
 	 * Manages ELM327 via USB.
 	 * Based on code from https://codeseekah.com/2012/02/22/elml327-to-rs232-in-linux.
 	 */
-	
+
 	class UsbConnection {
 
 		public:
 			UsbConnection();
 			~UsbConnection();
-			std::string Fetch(std::string data);
-
+			vector<uint8_t> Fetch(std::string data);
+			void test();
 		private:
 			int port;
 			struct ftdi_context context;
 
+			void PurgeBuffers();
 			void Send(std::string data);
 	};
 
@@ -38,21 +43,25 @@ namespace piagnostics {
 		// I think numbers are vendor and product
 		int openStatus = ftdi_usb_open(&context, 0x0403, 0x6001);
 		// if(openStatus < 0) throw error
-		
+
 		int resetStatus = ftdi_usb_reset(&context);
 		// if(resetStatus < 0) throw error
-		
+
 		int purgeStatus = ftdi_usb_purge_buffers(&context);
 		// if(purgeStatus < 0) throw error
-		
+
 		int baudStatus = ftdi_set_baudrate(&context, 115200);
 		// if(baudStatus < 0) throw error
 
 		int lineStatus = ftdi_set_line_property2(&context, BITS_8, STOP_BIT_1, NONE, BREAK_OFF);
 		// if(lineStatus < 0) throw error
-		
+
 		Send("ate0");  // disable echos
-		Send("atsp0");  // automatic protocol detection
+		//Send("atsp0");  // automatic protocol detection
+		//Send("ats0");  // no spaces in response
+		//Send("atl0");  // no linefeeds after \r
+
+
 	}
 
 	UsbConnection::~UsbConnection() {
@@ -62,28 +71,163 @@ namespace piagnostics {
 		ftdi_deinit(&context);
 	}
 
-	std::string UsbConnection::Fetch(std::string data) {
-		const int MAX_LEN = 32;
+	std::vector<uint8_t> UsbConnection::Fetch(std::string data) {		
+		const int MAX_LEN = 64;
 		unsigned char temp[MAX_LEN];
 
+		memset(temp, 0, MAX_LEN);
+		//		PurgeRxBuffer();
 		Send(data);
-		ftdi_usb_purge_rx_buffer(&context);
-
+		for(int i = 0; i < 1000000; i++);
 		int len = ftdi_read_data(&context, temp, MAX_LEN);
-		len -= 3;  // removes ">" prompt
+		// if(len < 0) throw error
 
-		return std::string(reinterpret_cast<const char*>(temp));
-	}
-	
-	void UsbConnection::Send(std::string data) {
-		data += '\r';
-		int writeStatus = ftdi_write_data(&context, (unsigned char*)data.c_str(),
-				sizeof(unsigned char) * data.length());
-		// if(writeStatus < 0) throw error
-		
-		ftdi_usb_purge_tx_buffer(&context);
+		return std::vector<uint8_t>(temp, temp + sizeof(temp) / sizeof(uint8_t));
 	}
 
+	void UsbConnection::PurgeBuffers() {
+		int writePurge = ftdi_usb_purge_tx_buffer(&context);
+		int readPurge = ftdi_usb_purge_rx_buffer(&context);
+		// if(purgeStatus < 0) throw error
+
+		int purgeStatus = ftdi_usb_purge_buffers(&context);
+	}
+
+	void UsbConnection::Send(std::string data) {	
+		//		ftdi_usb_purge_tx_buffer(&context);
+		data += 0x0d;
+		unsigned char* cstr = malloc(128);
+
+		sleep(2);
+
+		PurgeBuffers();
+
+		for(int i = 0; i < data.length(); i++) {
+			cstr[i] = (unsigned char)data[i];
+		}
+
+		cstr[data.length()] = 0x0d;
+
+		for(int i = 0; i < (data.length() + 1); i++ ) {
+			int writeStatus = ftdi_write_data(&context, cstr + i,
+					//					sizeof(unsigned char) * data.length());
+			    1);
+			// if(writeStatus < 0) throw error
+		}
+
+	}
+
+
+	void UsbConnection::test() {
+		struct ftdi_context ftdic; /* FTDI context */
+		/* line properties */
+		enum ftdi_bits_type bits = BITS_8; // 8 data bits
+		enum ftdi_stopbits_type sbit = STOP_BIT_1; // 1 stop bit
+		enum ftdi_parity_type parity = NONE; // no parity
+		enum ftdi_break_type lineend = BREAK_OFF;
+
+		int ret;
+		unsigned short modem_status = 0;
+		unsigned char * tx;
+		unsigned char * rx;
+		int i,j; /* general purpose indices */
+
+		if ((tx = malloc(128)) == NULL || (rx = malloc(128)) == NULL) {
+			fprintf(stderr, "Error: could not allocate memory\n");
+			return EXIT_FAILURE;
+		}
+
+		if (ftdi_init(&ftdic) < 0) {
+			fprintf(stderr, "Error: could not initialize FTDI\n");
+			return EXIT_FAILURE;
+		}
+
+		if ((ret = ftdi_usb_open(&ftdic, 0x0403, 0x6001)) < 0) {
+			fprintf(stderr, "unable to open ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+			return EXIT_FAILURE;
+		}
+
+		if ((ret = ftdi_usb_reset(&ftdic)) < 0) {
+			fprintf(stderr, "unable to reset ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+			return EXIT_FAILURE;
+		}
+
+		if ((ret = ftdi_usb_purge_buffers(&ftdic)) < 0) {
+			fprintf(stderr, "unable to purge buffers on ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+			return EXIT_FAILURE;
+		}
+
+		if ((ret = ftdi_set_baudrate(&ftdic, 115200)) < 0) {
+			fprintf(stderr, "unable to set ftdi device baud rate: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+			return EXIT_FAILURE;
+		}
+
+		if ((ret = ftdi_set_line_property2(&ftdic, bits, sbit, parity, lineend)) < 0) {
+			fprintf(stderr, "unable to set ftdi device properties: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+			return EXIT_FAILURE;                
+		}
+
+		ftdi_poll_modem_status(&ftdic, &modem_status);
+		printf("R232 status: 0x%x\n", modem_status);
+
+		memcpy(tx, "AT E0\r", 6); /* turn echoing off */
+		if (ftdi_write_data(&ftdic, tx, sizeof(unsigned char) * 6) < 0) {
+			fprintf(stderr, "unable to send ftdi device data: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+			return EXIT_FAILURE;             
+		}
+
+		//while (1) {
+		j = 0;
+
+		//while ( ( ret = getchar() ) != 0x0a && j < 128) tx[j++] = ret;
+		//	if (!j) continue;
+		tx[0] = '0';
+		tx[1] = '1';
+		tx[2] = '0';
+		tx[3] = 'c';
+		tx[4] = '1';
+		j = 5;
+		tx[j++] = 0x0d; /* end */
+		ret = 0;
+		ftdi_usb_purge_tx_buffer(&ftdic);
+		ftdi_usb_purge_rx_buffer(&ftdic);
+		for (i = 0; i < j; i++) {      
+			ret += ftdi_write_data(&ftdic, tx+i, sizeof(unsigned char) * 1);      
+		}
+
+		printf("Written %d bytes of data: ", ret);
+		for (i = 0; i < ret; i++) printf("0x%x ", tx[i]);  
+
+		printf("\n");
+
+		while (1) {
+			ret = ftdi_read_data(&ftdic, rx, 128);
+			if (ret > 0) {
+				printf("Read %d bytes of data\n", ret);
+				ret -= 3; /* remove > prompt */
+				printf("\tDATA: ");
+				for (i = 0; i < ret; i++) printf("0x%x ",rx[i]);
+				printf("\n\t(");
+				for (i = 0; i < ret; i++) printf("%c",rx[i]);
+				printf(")\n");
+				break;
+			} else if (ret < 0) {
+				fprintf(stderr, "unable to read from ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+				return EXIT_FAILURE;
+			}
+		}
+		//}
+
+		if ((ret = ftdi_usb_close(&ftdic)) < 0) {
+			fprintf(stderr, "unable to close ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
+			return EXIT_FAILURE;
+		}
+
+		ftdi_deinit(&ftdic);
+
+		free(tx);
+		free(rx);
+	}
 }
 
 #endif

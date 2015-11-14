@@ -11,7 +11,7 @@ using namespace std;
 
 namespace piagnostics {
 
-	string PidName(Pid pid) {
+/*	string PidName(Pid pid) {
 		return "";
 	}
 
@@ -32,9 +32,11 @@ namespace piagnostics {
 		}
 
 		return to_string(temp) + (char)176 + unit;
-	}
+	}*/
 
-
+	short to_fahr(short temp) { return 1.8 * temp + 32; }
+	
+	short to_mph(short kph) { return (short)(kph * 0.621371); }
 }
 
 #endif

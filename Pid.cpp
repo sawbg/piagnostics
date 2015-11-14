@@ -35,6 +35,7 @@ namespace piagnostics {
 		AbsoluteLoad,
 		FuelAirRatio,
 		RelativeThrottlePosition,
+		OutsideTemperature,
 		MinutesWithLightOn = 0x4D,
 		MinutesSinceCodesCleared,
 		FuelType,
