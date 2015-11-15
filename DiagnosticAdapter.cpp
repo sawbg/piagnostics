@@ -14,71 +14,70 @@
 #include "Units.cpp"
 #include "UsbConnection.cpp"
 
-namespace piagnostics {
+	namespace piagnostics {
 
-	class DiagnosticAdapter {
+		class DiagnosticAdapter {
 
-		public:
-			DiagnosticAdapter(Language defaultLang, Units defaultUnits);
+			public:
+				DiagnosticAdapter(Language defaultLang, Units defaultUnits);
 
-			std::string BarometricPressure();
-			std::string CheckEngineLight();
-			std::string CoolantTemp();
-			std::string EngineLoad();
-			std::vector<uint8_t> FetchData(Pid pid);
-			std::string FuelAirRatio();			
-			std::string FuelPressure();
-			std::string FuelRate();
-			std::string FuelSystemStatus();
-			std::string IntakeManifoldPressure();
-			std::string MilesSinceCodesCleared();
-			std::string OilTemperature();
-			std::string OutsideTemperature();
-			std::string Rpm();
-			std::string SecondsSinceStart();
-			std::string Speed();
-			std::string ThrottlePosition();
-			std::string TimingAdvance();
-			void ToggleLanguage();
-			void ToggleUnits();
-			int to_int(std::vector<unsigned char> v);
+				std::string BarometricPressure();
+				std::string CheckEngineLight();
+				std::string CoolantTemp();
+				std::string EngineLoad();
+				std::vector<uint8_t> FetchData(Pid pid);
+				std::string FuelAirRatio();			
+				std::string FuelRate();
+				std::string FuelSystemStatus();
+				std::string IntakeManifoldPressure();
+				std::string MilesSinceCodesCleared();
+				std::string OilTemperature();
+				std::string OutsideTemperature();
+				std::string Rpm();
+				std::string SecondsSinceStart();
+				std::string Speed();
+				std::string ThrottlePosition();
+				std::string TimingAdvance();
+				void ToggleLanguage();
+				void ToggleUnits();
+				int to_int(std::vector<unsigned char> v);
 
-		private:
-			const char ae = 132;
-			const char AE = 142;
-			const char degree = 176;  // ASCII degree symbol
-			const char oe = 148;
-			const char OE = 153;
-			const char ue = 129;
-			const char UE = 154;
+			private:
+				const char ae = 132;
+				const char AE = 142;
+				const char degree = 176;  // ASCII degree symbol
+				const char oe = 148;
+				const char OE = 153;
+				const char ue = 129;
+				const char UE = 154;
 
-			Language lang;
-			Units units;
+				Language lang;
+				Units units;
 
-			UsbConnection conn;
-	};
+				UsbConnection conn;
+		};
 
-	DiagnosticAdapter::DiagnosticAdapter(Language defaultLang, Units defaultUnits) {
-		lang = defaultLang;
-		units = defaultUnits;
-	}
+		DiagnosticAdapter::DiagnosticAdapter(Language defaultLang, Units defaultUnits) {
+			lang = defaultLang;
+			units = defaultUnits;
+		}
 
-	std::string DiagnosticAdapter::BarometricPressure() {
-		int val = to_int(FetchData(Pid::BarometricPressure));
-		if(units == Units::Metric) val = to_kpa(val);
-		return (lang == English ? ("Bar. Pres.: " + to_string(val) + " " + "PSI")
-				: ("Luftdruck: " + to_string(val) + " " + "kPa"));
-	}
+		std::string DiagnosticAdapter::BarometricPressure() {
+			int val = to_int(FetchData(Pid::BarometricPressure));
+			if(units == Units::Metric) val = to_kpa(val);
+			return (lang == English ? ("Bar. Pres.: " + to_string(val) + " " + "PSI")
+					: ("Luftdruck: " + to_string(val) + " " + "kPa"));
+		}
 
-	std::string DiagnosticAdapter::CheckEngineLight() {
-		bool on = (bool)(to_int(FetchData(Pid::StatusSinceCleared)) >> 7);
-		std::string ret;
+		std::string DiagnosticAdapter::CheckEngineLight() {
+			bool on = (bool)(to_int(FetchData(Pid::StatusSinceCleared)) >> 7);
+			std::string ret;
 
-		switch(lang) {
-			case English:
-				ret = string("Problem Light: ") + (on ? "On" : "Off");
-				break;
-			case German:
+			switch(lang) {
+				case English:
+					ret = string("Problem Light: ") + (on ? "On" : "Off");
+					break;
+				case German:
 				ret = string("MIL: ") + (on ? "Ein" : "Aus");
 				break;
 		}
@@ -100,19 +99,10 @@ namespace piagnostics {
 	}
 
 	std::string DiagnosticAdapter::FuelAirRatio() {
-		int val = to_int(FetchData(Pid::FuelAirRatio));
+		int val = to_int(FetchData(Pid::FuelAirRatio)) / 32786.;
 		std::ostringstream ss;
 		ss << std::fixed << std::setprecision(3) << val;
 		return (lang == English ? "Fuel/Air: " : "KL-Gemisch") + ss.str();
-	}
-
-	std::string DiagnosticAdapter::FuelPressure() {
-		int val = to_int(FetchData(Pid::FuelPressure));
-		val *= 3;
-		if(units == Units::Metric) val = to_kpa(val);
-		return (lang == English ? "Fuel PSI: " : "Kraftstoffd: ")
-			+ to_string(val) + " "
-			+ (units == Units::Imperial ? "PSI" : "kPa");
 	}
 
 	std::string DiagnosticAdapter::FuelRate() {
@@ -234,7 +224,7 @@ namespace piagnostics {
 	std::string DiagnosticAdapter::Speed() {
 		int speed = to_int(FetchData(Pid::Speed));
 		if(units == Units::Metric) speed = to_kph(speed);
-		return (lang == English ? "Speed: " : "Geschw.: ")
+		return (lang == English ? "Speed: " : "Geschw.: ") + to_string(speed)
 			+ string(units == Units::Imperial ? " MPH" : " km/h");
 	}
 
