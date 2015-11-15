@@ -37,6 +37,7 @@ namespace piagnostics {
 			string Speed(Units units);
 			string TimingAdvance();
 			void ToggleLanguage();
+			int to_int(std::vector<unsigned char> v);
 
 		private:
 			const char degree = 176;  // ASCII degree symbol
@@ -48,7 +49,7 @@ namespace piagnostics {
 	}
 
 	string DiagnosticAdapter::CheckEngineLight() {
-		bool on = (bool)FetchData(Pid::StatusSinceCleared)[0] >> 7;
+		bool on = (bool)(to_int(FetchData(Pid::StatusSinceCleared)) >> 7);
 		std::string ret;
 
 		switch(lang) {
@@ -149,19 +150,19 @@ namespace piagnostics {
 	}
 
 	std::string DiagnosticAdapter::OutsideTemperature(Units units) {
-		short temp = (short)FetchData(Pid::OutsideTemperature)[0] - 40;
+		int temp = to_int(FetchData(Pid::OutsideTemperature)) - 40;
 		if(units == Units::Imperial) temp = to_fahr(temp);
 		return "Temp: " + to_string(temp) + degree + (units == Units::Imperial ? "F" : "C");
 	}
 
 	std::string DiagnosticAdapter::Rpm() {
-		vector<uint8_t> val = FetchData(Pid::Rpm);
-		short rpm = ((val[0] << 8) + val[1] + 2) / 4.; // rounds
+		int val = to_int(FetchData(Pid::Rpm));
+		short rpm = (val + 2) / 4.; // rounds
 		return to_string(rpm) + " " + (lang == English ? "RPM" : "U/min");
 	}
 
 	std::string DiagnosticAdapter::Speed(Units units) {
-		short speed = (short)FetchData(Pid::Speed)[0];
+		int speed = to_int(FetchData(Pid::Speed));
 		return (lang == English ? "Speed: " : "Geschw.: ")
 			+ (units == Units::Imperial ? (to_string(to_mph(speed)) + " MPH")
 					: (to_string(speed) + " km/h"));
@@ -169,6 +170,16 @@ namespace piagnostics {
 
 	void DiagnosticAdapter::ToggleLanguage() {
 		lang = lang == English ? German : English;
+	}
+
+	int DiagnosticAdapter::to_int(std::vector<unsigned char> v) {
+		std::string str;
+
+		for(int i = 0; i < v.size(); i++) {
+			str += (char)v[i];
+		}
+
+		return (int)std::stoul(str, nullptr, 16);
 	}
 
 }
