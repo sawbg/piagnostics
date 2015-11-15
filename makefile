@@ -13,3 +13,6 @@ docs:
 #	rm doc/* -r
 #	cp temp doc/doxygen.config
 	doxygen doc/doxygen.config
+
+count:
+	wc -l src/*  # works assuming there's no subdirectories

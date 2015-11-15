@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 
+#include "DiagnosticAdapter.cpp"
 #include "Language.cpp"
 #include "Pid.cpp"
-#include "DiagnosticAdapter.cpp"
 #include "Units.cpp"
 #include "UsbConnection.cpp"
 
