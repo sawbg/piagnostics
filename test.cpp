@@ -22,12 +22,9 @@ int main() {
 		cout << diag.CoolantTemp() << endl;
 		cout << diag.EngineLoad() << endl;
 		cout << diag.FuelAirRatio() << endl;
-		cout << diag.FuelPressure() << endl;
-		cout << diag.FuelSystemStatus() << endl;
 		cout << diag.IntakeManifoldPressure() << endl;
 		cout << diag.MilesSinceCodesCleared() << endl;
-		cout << diag.OilTemperature() << endl;
-		cout << diag.SecondsSinceStart() << endl;
+		cout << diag.MinutesSinceStart() << endl;
 		cout << diag.ThrottlePosition() << endl;
 		cout << diag.TimingAdvance() << endl;
 		cout << endl;

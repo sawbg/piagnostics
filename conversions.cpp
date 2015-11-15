@@ -11,11 +11,11 @@ using namespace std;
 
 namespace piagnostics {
 
-	short to_celcius(short temp) { return (temp - 32) * 5. / 9.; }
+	short to_fahrenheit(short temp) { return 1.8 * temp + 32; }
 	
-	short to_kph(short mph) { return (short)(mph / 0.621371); }
+	short to_mph(short kph) { return (short)(kph * 0.621371); }
 
-	short to_kpa(short psi) { return (short)(6.89476 * psi); }
+	short to_psi(short kpa) { return (short)(0.145 * kpa); }
 }
 
 #endif
