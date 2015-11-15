@@ -1,13 +1,12 @@
-/*
- * This enumeration details the OBD-II Mode 1 PIDs.
- *
- */
-
 #ifndef Pid_H
 #define Pid_H
 
 namespace piagnostics {
 
+	/**
+	 * Enumeration class representing the OBD-II mode 1 PIDs. Not all of
+	 * these are used yet in Piagnostics.
+	 */
 	enum class Pid : int {
 		PidsSupported0,
 		StatusSinceCleared,

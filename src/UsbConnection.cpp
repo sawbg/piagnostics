@@ -11,17 +11,35 @@
 namespace piagnostics {
 
 	/**
-	 * Manages ELM327 via USB.
-	 * Based on code from https://codeseekah.com/2012/02/22/elml327-to-rs232-in-linux.
+	 * This class manages a USB connection with an ELM 327 device. It
+	 * serves no purpose at the moment except to house the Fetch()
+	 * function. The class must be rewritten to make sense as a class.
+	 *
+	 * Based on code from
+	 * https://codeseekah.com/2012/02/22/elml327-to-rs232-in-linux.
 	 */
 
 	class UsbConnection {
 
 		public:
+			/**
+			 * Sends a command to the ELM 327 chip and returns the
+			 * reply.
+			 *
+			 * I did NOT write this code. I simply copied and
+			 * pasted it with slighet modifications, since I could
+			 * not get the timing issue solved with mine. Mine was
+			 * fairly unique, but I have simply decided to use this
+			 * instead in the interest of saving time. I know my
+			 * code would require only a slight modification to
+			 * run correctly.
+			 *
+			 * @param data the command to send
+			 *
+			 * @return the chip's reply as a vector of unsigned,
+			 * 8-bit integers.
+			 */
 			vector<uint8_t> Fetch(std::string data);
-		private:
-			int port;
-			struct ftdi_context context;
 	};
 
 	std::vector<uint8_t> UsbConnection::Fetch(std::string data) {		
@@ -37,30 +55,29 @@ namespace piagnostics {
 		unsigned char * tx = (unsigned char*)malloc(32);
 		unsigned char * rx = (unsigned char*)malloc(32);
 		int i,j; /* general purpose indices */
-
-		ftdi_init(&ftdic);
-		ftdi_usb_open(&ftdic, 0x0403, 0x6001);
-		ftdi_usb_reset(&ftdic);
-		ftdi_usb_purge_buffers(&ftdic);
-		ftdi_set_baudrate(&ftdic, 115200);
-		ftdi_set_line_property2(&ftdic, bits, sbit, parity, lineend);
-		ftdi_poll_modem_status(&ftdic, &modem_status);
-		memcpy(tx, "AT E0\r", 6); /* turn echoing off */
-		ftdi_write_data(&ftdic, tx, sizeof(unsigned char) * 6);
-
-		for(j = 0; j < data.length(); j++) tx[j] = (char)data[j];		
-		tx[j++] = 0x0d; /* end */
-		ret = 0;
-		ftdi_usb_purge_tx_buffer(&ftdic);
-		ftdi_usb_purge_rx_buffer(&ftdic);
-
-		for (i = 0; i < j; i++) {      
-			ret += ftdi_write_data(&ftdic, tx+i, sizeof(unsigned char) * 1);      
-		}
-
 		bool cont = true;
 
 		while(cont) {
+			ftdi_init(&ftdic);
+			ftdi_usb_open(&ftdic, 0x0403, 0x6001);
+			ftdi_usb_reset(&ftdic);
+			ftdi_usb_purge_buffers(&ftdic);
+			ftdi_set_baudrate(&ftdic, 115200);
+			ftdi_set_line_property2(&ftdic, bits, sbit, parity, lineend);
+			ftdi_poll_modem_status(&ftdic, &modem_status);
+			memcpy(tx, "AT E0\r", 6); /* turn echoing off */
+			ftdi_write_data(&ftdic, tx, sizeof(unsigned char) * 6);
+
+			for(j = 0; j < data.length(); j++) tx[j] = (char)data[j];		
+			tx[j++] = 0x0d; /* end */
+			ret = 0;
+			ftdi_usb_purge_tx_buffer(&ftdic);
+			ftdi_usb_purge_rx_buffer(&ftdic);
+
+			for (i = 0; i < j; i++) {      
+				ret += ftdi_write_data(&ftdic, tx+i, sizeof(unsigned char) * 1);      
+			}
+
 			usleep(100000);  // THIS LINE IS CRITICAL TO THIS PROGRAM!	
 			ret = ftdi_read_data(&ftdic, rx, 128);
 			ret -= 3; // remove > prompt

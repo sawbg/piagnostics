@@ -16,45 +16,255 @@
 
 namespace piagnostics {
 
+	/**
+	 * This class is acts as a middle-man between the connection classes,
+	 * BluetoothConnection (not implemented in this class) and
+	 * UsbConnection.
+	 *
+	 * It still needs some work. At the moment, it only supports a USB
+	 * connection with the OBD-II (Elm 327) device. It needs to add support
+	 * for bluetooth as well as languages besides English and German.
+	 * A different language class might make more sense for expansion.
+	 */
 	class DiagnosticAdapter {
 
 		public:
+			/**
+			 * Initializes the Diagnostic adapter with the given
+			 * languages and units.
+			 *
+			 * @param defaultLang display language
+			 * @param defaultUnits display units
+			 */
 			DiagnosticAdapter(Language defaultLang, Units defaultUnits);
 
+			/**
+			 * Returns the barometric pressure according to the
+			 * adapter's language and units in a string to be
+			 * displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD
+			 */
 			std::string BarometricPressure();
+			
+			/**
+			 * Returns the status (on/off) of the check-engine
+			 * light (i.e., the malfunction indicator lamp)
+			 * specific to the class language in a string to be
+			 * displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD
+			 */
 			std::string CheckEngineLight();
+			
+			/**
+			 * Returns the engine coolant temperature according to
+			 * the adapter's language and units in a string to be
+			 * displayed on the LCD.
+			 *
+			 * @return one-line (20 character max) string to be
+			 * displayed on the LCD
+			 */
 			std::string CoolantTemp();
+			
+			/**
+			 * Returns the engine load according to language as a
+			 * string to be displayed on the LCD.
+			 *
+			 * @return one-line (20 character max) string to be
+			 * displayed on the LCD
+			 */
 			std::string EngineLoad();
+			
+			/**
+			 * Returns requested mode 1 diagnostic information from
+			 * the USB connection as a vector of unsigned integers.
+			 *
+			 * This functions needs some work. It should probably be
+			 * split into two functions, one that retrieves the
+			 * information (the rx array) and another that converts
+			 * it from its hex format in the array to a 4- or 8-bit
+			 * integer. While the to_int() function does this,
+			 * it would be nice to only have to call a single
+			 * function to get the integer form of the data.
+			 *
+			 * @param pid the PID of the desired data
+			 *
+			 * @return a vector of unsigned, 8-bit integers
+			 * containing the Elm 327 chip's reply to the PID
+			 */
 			std::vector<uint8_t> FetchData(Pid pid);
+			
+			/**
+			 * Returns the fuel-to-air ratio of the fuel injector
+			 * according to the adapter language as a string to be
+			 * displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD
+			 */
 			std::string FuelAirRatio();			
+			
+			/**
+			 * Returns the current rate of fuel consumption
+			 * according to the language and units of the adapter
+			 * as a string to be displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD
+			 */
 			std::string FuelRate();
-			//std::string FuelSystemStatus();
+			
+			/**
+			 * Returns the absolute intake manifold pressure in
+			 * the language and units of the adapter to be
+			 * displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
 			std::string IntakeManifoldPressure();
+			
+			/**
+			 * Returns the distance traveled according to the class
+			 * language and units to be displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
 			std::string MilesSinceCodesCleared();
-			std::string OilTemperature();
-			std::string OutsideTemperature();
-			std::string Rpm();
+			
+			/**
+			 * Returns the minutes since the engine was started
+			 * according to the adapter language to be displayed
+			 * on the LCD.
+			 *
+			 * The OBD-II protocol specifies the RPM be in units of
+			 * one-quarter rotations. Therefore, this function
+			 * rounds to the nearest whole RPM and includes this
+			 * value in the returned string.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
 			std::string MinutesSinceStart();
+			
+			/**
+			 * Returns the engine oil temperature in the
+			 * appropriate language and units to be displayed on
+			 * the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
+			std::string OilTemperature();
+			
+			/**
+			 * Returns the outside (ambient) temperature in the
+			 * correct language and units to be displayed on the
+			 * LCD.
+			 *
+			 * I should note that this value has differed from the
+			 * ambient temperature displayed on the dashboard of my
+			 * Ford Escape by up to 10*F (5.6*C).
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
+			std::string OutsideTemperature();
+			
+			/**
+			 * Retrns the engine RPM according to the language of
+			 * the adapter to be displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
+			std::string Rpm();
+			
+			/**
+			 * Returns the current speed in the appropriate
+			 * language and units to be displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
 			std::string Speed();
+			
+			/**
+			 * Returns the relative throttle position, expressed as
+			 * a percent, according to the adapter language to be
+			 * displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
 			std::string ThrottlePosition();
+	
+			/**
+			 * Returns the first-cylinder timing advance
+			 * in degrees according to the class language to be
+			 * displayed on the LCD.
+			 *
+			 * @return one-line (20 characters max) string to be
+			 * displayed on the LCD.
+			 */
 			std::string TimingAdvance();
+			
+			/**
+			 * Toggles the adapter language between English and
+			 * German.
+			 *
+			 * This function must be removed when a third language
+			 * is added.
+			 */
 			void ToggleLanguage();
+			
+			/**
+			 * Toggles the adapter's system of measurement between
+			 * Imperial and metric units.
+			 */
 			void ToggleUnits();
+			
+			/**
+			 * Converts a vector of unsigned, 8-bit integers
+			 * (presumably from the FetchData function) to a 32-bit
+			 * integer.
+			 *
+			 * The first elements of the vector are given the
+			 * greatest values (i.e., given the positions closer
+			 * to the MSB of the integer).
+			 *
+			 * @param v vector containging up to four unsigned,
+			 * 8-bit integers
+			 *
+			 * @return a 32-bit integer combination of the vector
+			 * elements
+			 */
 			int to_int(std::vector<unsigned char> v);
 
 		private:
-			const char ae = 132;
-			const char AE = 142;
-			const char degree = 176;  // ASCII degree symbol
-			const char oe = 148;
-			const char OE = 153;
-			const char ue = 129;
-			const char UE = 154;
+			const char ae = 132;  // lowercase a-umlaut
+			const char AE = 142;  // uppercase a-umlaut
+			const char degree = 176;  // degree symbol
+			const char oe = 148;  // lowercase o-umlaut
+			const char OE = 153;  // uppercase o-umlaut
+			const char ue = 129;  // lowercase u-umlaut
+			const char UE = 154;  // uppercase u-umlaut
 
+			/**
+			 * The adapter's current langauge
+			 */
 			Language lang;
+			
+			/**
+			 * The adapter's current system of measurements
+			 */
 			Units units;
 
-			UsbConnection conn;
+			UsbConnection conn;  // serves no purpose as class ATM
 	};
 
 	DiagnosticAdapter::DiagnosticAdapter(Language defaultLang, Units defaultUnits) {

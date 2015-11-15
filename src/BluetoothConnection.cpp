@@ -18,17 +18,69 @@ using namespace std;
 
 namespace piagnostics {
 
+	/**
+	 * Establishes a bluetooth connection with an OBD-II bluetooth device.
+	 *
+	 * The deivce for which this class was designed is the BAFX OBD-II
+	 * Diagnostic Interface, available for purchase on Amazon.com.
+	 * It requires the pincode 1234, which has not been implemented
+	 * in this class. It si certainly possible that this class could
+	 * be modified for use with other OBD-II bluetooth devices.
+	 */
 	class BluetoothConnection {
 
 		public:
+			/**
+			 * Initializes the bluetooth connection with the OBD-II device.
+			 */
 			BluetoothConnection();
+			
+			/**
+			 * Closes the bluetooth connection with the OBD-II device.
+			 */
 			~BluetoothConnection();			
+			
+			/**
+			 * Sends a message to the bluetooth device and returns
+			 * the device's reply.
+			 *
+			 * @param msg the string to transmit
+			 * 
+			 * @return the reply (if any) from the device as an
+			 * array of unsigned, 8-bit integers.
+			 */
 			uint8_t* Send(string msg);
 		private:
+			/**
+			 * The bluetooth socket to which messages are written.
+			 */
 			int WriteSocket;
 
+			/**
+			 * Closes the bluetooth connection to the OBD-II
+			 * device.
+			 */
 			void Close();
+
+			/**
+			 * Finds the bluetooth address of the BAFX OBD-II
+			 * device
+			 * 
+			 * The name of the BAFX OBD-II device is hard-coded
+			 * name of the BAFX device.
+			 *
+			 * @return the bluetooth address of the BAFX device
+			 */
 			bdaddr_t FindAddress();
+	
+			/**
+			 * Opens the connection to the OBD-II bluetooth device.
+			 *
+			 * Requries a PIN (1234) for the BAFX device.
+			 *
+			 * @param addr the bluetooth address of the device to
+			 * which to connect.
+			 */
 			void Open(bdaddr_t addr);
 	};
 
