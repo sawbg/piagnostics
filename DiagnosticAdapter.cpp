@@ -14,41 +14,63 @@
 #include "Units.cpp"
 #include "UsbConnection.cpp"
 
-using namespace std;
-
 namespace piagnostics {
 
 	class DiagnosticAdapter {
 
 		public:
-			Language lang;
+			DiagnosticAdapter(Language defaultLang, Units defaultUnits);
 
-			DiagnosticAdapter(Language defaultLang);
-
-			string CheckEngineLight();
-			string CoolantTemp(Units units);
-			string EngineLoad();
+			std::string BarometricPressure();
+			std::string CheckEngineLight();
+			std::string CoolantTemp();
+			std::string EngineLoad();
 			std::vector<uint8_t> FetchData(Pid pid);
-			string FuelPressure(Units units);
-			string FuelSystemStatus();
-			string IntakeManifoldPressure(Units units);
-			string OutsideTemperature(Units units);
-			string Rpm();
-			string Speed(Units units);
-			string TimingAdvance();
+			std::string FuelAirRatio();			
+			std::string FuelPressure();
+			std::string FuelRate();
+			std::string FuelSystemStatus();
+			std::string IntakeManifoldPressure();
+			std::string MilesSinceCodesCleared();
+			std::string OilTemperature();
+			std::string OutsideTemperature();
+			std::string Rpm();
+			std::string SecondsSinceStart();
+			std::string Speed();
+			std::string ThrottlePosition();
+			std::string TimingAdvance();
 			void ToggleLanguage();
+			void ToggleUnits();
 			int to_int(std::vector<unsigned char> v);
 
 		private:
+			const char ae = 132;
+			const char AE = 142;
 			const char degree = 176;  // ASCII degree symbol
+			const char oe = 148;
+			const char OE = 153;
+			const char ue = 129;
+			const char UE = 154;
+
+			Language lang;
+			Units units;
+
 			UsbConnection conn;
 	};
 
-	DiagnosticAdapter::DiagnosticAdapter(Language defaultLang) {
+	DiagnosticAdapter::DiagnosticAdapter(Language defaultLang, Units defaultUnits) {
 		lang = defaultLang;
+		units = defaultUnits;
 	}
 
-	string DiagnosticAdapter::CheckEngineLight() {
+	std::string DiagnosticAdapter::BarometricPressure() {
+		int val = to_int(FetchData(Pid::BarometricPressure));
+		if(units == Units::Metric) val = to_kpa(val);
+		return (lang == English ? ("Bar. Pres.: " + to_string(val) + " " + "PSI")
+				: ("Luftdruck: " + to_string(val) + " " + "kPa"));
+	}
+
+	std::string DiagnosticAdapter::CheckEngineLight() {
 		bool on = (bool)(to_int(FetchData(Pid::StatusSinceCleared)) >> 7);
 		std::string ret;
 
@@ -64,46 +86,64 @@ namespace piagnostics {
 		return ret;
 	}
 
-	/*string DiagnosticAdapter::CoolantTemp(Units units) {
-	  uint8_t* val = FetchData(Pid::CoolantTemp);
-	 *val -= 40; // accounts for 40 degree offset
-	 return to_temp(*val, units);
-	 }
+	std::string DiagnosticAdapter::CoolantTemp() {
+		int val = to_int(FetchData(Pid::CoolantTemp));
+		val -= 40; // accounts for 40 degree offset
+		if(units == Units::Metric) val = to_celcius(val);
+		return (lang == English ? "Coolant: " : ("K" + ue + string("hlmittel")))
+			+ to_string(val) + degree  + (units == Units::Imperial ? "F" : "C");
+	}
 
-	 string DiagnosticAdapter::EngineLoad() {
-	 uint8_t* val = FetchData(Pid::EngineLoad);
-	 return to_string(*val * 100. / 255) + "%";  // load must be scaled
-	 }
+	std::string DiagnosticAdapter::EngineLoad() {
+		int val = to_int(FetchData(Pid::EngineLoad)) / 255. * 100;
+		return (lang == English ? "Engine Load: " : "Motorlast: ") + to_string(val) + "%";
+	}
 
-	 string DiagnosticAdapter::FuelPressure(Units units) {
-	 uint8_t* val = FetchData(Pid::FuelPressure);
-	 *val *= 3;
-	 }
+	std::string DiagnosticAdapter::FuelAirRatio() {
+		int val = to_int(FetchData(Pid::FuelAirRatio));
+		std::ostringstream ss;
+		ss << std::fixed << std::setprecision(3) << val;
+		return (lang == English ? "Fuel/Air: " : "KL-Gemisch") + ss.str();
+	}
 
-	 string DiagnosticAdapter::FuelSystemStatus() {
-	 uint8_t* val = FetchData(Pid::FuelSystemStatus);
-	 string ret;
+	std::string DiagnosticAdapter::FuelPressure() {
+		int val = to_int(FetchData(Pid::FuelPressure));
+		val *= 3;
+		if(units == Units::Metric) val = to_kpa(val);
+		return (lang == English ? "Fuel PSI: " : "Kraftstoffd: ")
+			+ to_string(val) + " "
+			+ (units == Units::Imperial ? "PSI" : "kPa");
+	}
 
-	 switch(*val) {
-	 case 1:
-	 ret = "Open Loop (Low Engine Temp)";
-	 break;
-	 case 2:
-	 ret = "Closed Loop (No Faults)";
-	 break;
-	 case 4:
-	 ret = "Open Loop (Engine Load Or Fuel Cut)";
-	 break;
-	 case 8:
-	 ret = "Open Loop (System Failure)";
-	 break;
-	 case 16:
-	 ret = "Closed Loop (Some Fault)";
-	 break;
-	 }
+	std::string DiagnosticAdapter::FuelRate() {
+		int val = to_int(FetchData(Pid::FuelRate));
+		return to_string(val);
+	}
 
-	 return ret;
-	 }*/
+	std::string DiagnosticAdapter::FuelSystemStatus() {
+		int val = to_int(FetchData(Pid::FuelSystemStatus));
+		std::string ret;
+
+		switch(val) {
+			case 1:
+				ret = "Open Loop (Low Engine Temp)";
+				break;
+			case 2:
+				ret = "Closed Loop (No Faults)";
+				break;
+			case 4:
+				ret = "Open Loop (Engine Load Or Fuel Cut)";
+				break;
+			case 8:
+				ret = "Open Loop (System Failure)";
+				break;
+			case 16:
+				ret = "Closed Loop (Some Fault)";
+				break;
+		}
+
+		return ret;
+	}
 
 	std::vector<uint8_t> DiagnosticAdapter::FetchData(Pid pid) {
 		std::string mode;
@@ -140,7 +180,7 @@ namespace piagnostics {
 				break;
 		}
 
-		stringstream ss;
+		std::stringstream ss;
 		ss << std::setfill('0') << std::setw(2) << std::hex << (int)pid;
 		std::vector<uint8_t> resp = conn.Fetch(mode + ss.str() + to_string(bytes));
 		// error code here
@@ -149,9 +189,33 @@ namespace piagnostics {
 		return resp;
 	}
 
-	std::string DiagnosticAdapter::OutsideTemperature(Units units) {
+	std::string DiagnosticAdapter::IntakeManifoldPressure() {
+		int val = to_int(FetchData(Pid::IntakeManifoldPressure));
+		if(units == Units::Metric) val = to_kpa(val);
+		return (lang == English ? "In Man PSI" : "Saugrohrd.: ")
+			+ to_string(val) + " "
+			+ (units == Units::Imperial ? "PSI" : "kPa");
+	}
+
+	std::string DiagnosticAdapter::MilesSinceCodesCleared() {
+		int val = to_int(FetchData(Pid::MilesSinceCodesCleared));
+		if(units == Units::Metric) val = to_kph(val);
+		return (lang == English ? ("DTC clr " + to_string(val) + "mi ago")
+				: ("DTC gefrt v " + to_string(val) + "km"));
+	}
+
+	std::string DiagnosticAdapter::OilTemperature() {
+		int val = to_int(FetchData(Pid::OilTemp));
+		val -= 40;
+		if(units == Units::Metric) val = to_celcius(val);
+		return (lang == English ? "Oil Temp: " : (OE + "ltemp: "))
+			+ to_string(val) + degree
+			+ (units == Units::Imperial ? "F" : "C");
+	}
+
+	std::string DiagnosticAdapter::OutsideTemperature() {
 		int temp = to_int(FetchData(Pid::OutsideTemperature)) - 40;
-		if(units == Units::Imperial) temp = to_fahr(temp);
+		if(units == Units::Metric) temp = to_celcius(temp);
 		return "Temp: " + to_string(temp) + degree + (units == Units::Imperial ? "F" : "C");
 	}
 
@@ -161,15 +225,37 @@ namespace piagnostics {
 		return to_string(rpm) + " " + (lang == English ? "RPM" : "U/min");
 	}
 
-	std::string DiagnosticAdapter::Speed(Units units) {
+	std::string DiagnosticAdapter::SecondsSinceStart() {
+		int val = to_int(FetchData(Pid::SecondsSinceStart));
+		return (lang == English ? ("Started " + to_string(val) + "s ago")
+				: ("Gestartet vor" + to_string(val) + "s"));
+	}
+
+	std::string DiagnosticAdapter::Speed() {
 		int speed = to_int(FetchData(Pid::Speed));
+		if(units == Units::Metric) speed = to_kph(speed);
 		return (lang == English ? "Speed: " : "Geschw.: ")
-			+ (units == Units::Imperial ? (to_string(to_mph(speed)) + " MPH")
-					: (to_string(speed) + " km/h"));
+			+ string(units == Units::Imperial ? " MPH" : " km/h");
+	}
+
+	std::string DiagnosticAdapter::ThrottlePosition() {
+		int val = to_int(FetchData(Pid::ThrottlePosition)) / 255. * 100;
+		return (lang == English ? "Throttle Pos.: " : "DrosStellung: ")
+			+ to_string(val) + "%";
+	}
+
+	std::string DiagnosticAdapter::TimingAdvance() {
+		int val = (to_int(FetchData(Pid::TimingAdvance)) - 128) / 2.;
+		return (lang == English ? "Timing Adv.: " : (string("Fr")
+					+ ue + "hz" + ue + "ndung: ")) + to_string(val) + degree;
 	}
 
 	void DiagnosticAdapter::ToggleLanguage() {
 		lang = lang == English ? German : English;
+	}
+
+	void DiagnosticAdapter::ToggleUnits() {
+		units = units == Units::Imperial ? Units::Metric : Units::Imperial;
 	}
 
 	int DiagnosticAdapter::to_int(std::vector<unsigned char> v) {
