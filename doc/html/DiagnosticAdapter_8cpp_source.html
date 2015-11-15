@@ -127,13 +127,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a9870f53ec8870417471235fe27b52109">MilesSinceCodesCleared</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a66dd37ca1c15b14ebd71032bc5db48b9">OilTemperature</a>();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87">OutsideTemperature</a>();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#acee5a332f6500b3bc5924432a8cb10b5">Rpm</a>();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5">MinutesSinceStart</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5">MinutesSinceStart</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a66dd37ca1c15b14ebd71032bc5db48b9">OilTemperature</a>();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87">OutsideTemperature</a>();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#acee5a332f6500b3bc5924432a8cb10b5">Rpm</a>();</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            std::string <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a00ef2661843feaed8f9e160808a3b2b7">Speed</a>();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            </div>
@@ -241,7 +241,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        std::stringstream ss;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        ss &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; std::setw(2) &lt;&lt; std::hex &lt;&lt; (int)pid;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        std::vector&lt;uint8_t&gt; resp = conn.Fetch(mode + ss.str() + to_string(bytes));</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        std::vector&lt;uint8_t&gt; resp = conn.<a class="code" href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">Fetch</a>(mode + ss.str() + to_string(bytes));</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="comment">// error code here</span></div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        resp.erase(resp.begin(), resp.begin() + 4);</div>
@@ -357,7 +357,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;}</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classpiagnostics_1_1UsbConnection_html"><div class="ttname"><a href="classpiagnostics_1_1UsbConnection.html">piagnostics::UsbConnection</a></div><div class="ttdef"><b>Definition:</b> <a href="UsbConnection_8cpp_source.html#l00018">UsbConnection.cpp:18</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1UsbConnection_html_a5e02a13dff49e2f333cada2086351038"><div class="ttname"><a href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">piagnostics::UsbConnection::Fetch</a></div><div class="ttdeci">vector&lt; uint8_t &gt; Fetch(std::string data)</div><div class="ttdef"><b>Definition:</b> <a href="UsbConnection_8cpp_source.html#l00045">UsbConnection.cpp:45</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1UsbConnection_html"><div class="ttname"><a href="classpiagnostics_1_1UsbConnection.html">piagnostics::UsbConnection</a></div><div class="ttdef"><b>Definition:</b> <a href="UsbConnection_8cpp_source.html#l00022">UsbConnection.cpp:22</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a9870f53ec8870417471235fe27b52109"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a9870f53ec8870417471235fe27b52109">piagnostics::DiagnosticAdapter::MilesSinceCodesCleared</a></div><div class="ttdeci">std::string MilesSinceCodesCleared()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00400">DiagnosticAdapter.cpp:400</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a2bf9b6642460423efa066814588c38e5"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5">piagnostics::DiagnosticAdapter::MinutesSinceStart</a></div><div class="ttdeci">std::string MinutesSinceStart()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00407">DiagnosticAdapter.cpp:407</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a1e5f634d1155645494a120fcecee812c"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a1e5f634d1155645494a120fcecee812c">piagnostics::DiagnosticAdapter::TimingAdvance</a></div><div class="ttdeci">std::string TimingAdvance()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00437">DiagnosticAdapter.cpp:437</a></div></div>
@@ -383,7 +384,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 08:27:49 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 12:16:01 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

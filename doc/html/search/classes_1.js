@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['diagnosticadapter',['DiagnosticAdapter',['../classpiagnostics_1_1DiagnosticAdapter.html',1,'piagnostics']]]
+  ['changes',['Changes',['../classpiagnostics_1_1Changes.html',1,'piagnostics']]]
 ];

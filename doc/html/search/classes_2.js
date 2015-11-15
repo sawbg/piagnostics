@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usbconnection',['UsbConnection',['../classpiagnostics_1_1UsbConnection.html',1,'piagnostics']]]
+  ['diagnosticadapter',['DiagnosticAdapter',['../classpiagnostics_1_1DiagnosticAdapter.html',1,'piagnostics']]]
 ];
