@@ -92,7 +92,7 @@ void test() {
 
 		printf("\n");
 
-		while (1) {
+		while (rx[0] != '4') {
 			ret = ftdi_read_data(&ftdic, rx, 128);
 			if (ret > 0) {
 				printf("Read %d bytes of data\n", ret);
@@ -102,7 +102,7 @@ void test() {
 				printf("\n\t(");
 				for (i = 0; i < ret; i++) printf("%c",rx[i]);
 				printf(")\n");
-				break;
+				//break;
 			} else if (ret < 0) {
 				fprintf(stderr, "unable to read from ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
 				return EXIT_FAILURE;
@@ -124,16 +124,17 @@ void test() {
 
 int main() {
 	
-	/*DiagnosticAdapter diag(English);
+	DiagnosticAdapter diag(English);
 	cout << diag.Speed(Units::Imperial) << endl;
 	cout << diag.Rpm() << endl;
 	cout << diag.OutsideTemperature(Units::Imperial) << endl;
 	cout << diag.CheckEngineLight() << endl;
 	diag.ToggleLanguage();
-	*/
+	
 
-	UsbConnection conn;
-	conn.test();
-	//test();	
+	//UsbConnection conn;
+	//vector<uint8_t> v = conn.Fetch("010c1");
+	//cout << (char)v[0] << (char)v[1] << endl;
+//	test();	
 	return 0;
 }

@@ -144,7 +144,7 @@ namespace piagnostics {
 		std::vector<uint8_t> resp = conn.Fetch(mode + ss.str() + to_string(bytes));
 		// error code here
 
-		resp.erase(resp.begin(), resp.begin() + 5);
+		resp.erase(resp.begin(), resp.begin() + 4);
 		return resp;
 	}
 
