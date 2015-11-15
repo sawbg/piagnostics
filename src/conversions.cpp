@@ -7,8 +7,6 @@
 #include "Pid.cpp"
 #include "Units.cpp"
 
-using namespace std;
-
 namespace piagnostics {
 
 	/**

@@ -7,3 +7,9 @@ piag:
 
 test:
 	$(GCC) src/test.cpp -o bin/test $(CPPFLAGS)
+
+docs:
+#	cp doc/doxygen.config temp
+#	rm doc/* -r
+#	cp temp doc/doxygen.config
+	doxygen doc/doxygen.config
