@@ -37,52 +37,13 @@ namespace piagnostics {
 
 	UsbConnection::UsbConnection() {		
 
-		/*int initStatus = ftdi_init(&context);
-		// if(initStatus < 0) throw error
-
-		// I think numbers are vendor and product
-		int openStatus = ftdi_usb_open(&context, 0x0403, 0x6001);
-		// if(openStatus < 0) throw error
-
-		int resetStatus = ftdi_usb_reset(&context);
-		// if(resetStatus < 0) throw error
-
-		int purgeStatus = ftdi_usb_purge_buffers(&context);
-		// if(purgeStatus < 0) throw error
-
-		int baudStatus = ftdi_set_baudrate(&context, 115200);
-		// if(baudStatus < 0) throw error
-
-		int lineStatus = ftdi_set_line_property2(&context, BITS_8, STOP_BIT_1, NONE, BREAK_OFF);
-		// if(lineStatus < 0) throw error
-
-		Send("ate0");  // disable echos
-		//Send("atsp0");  // automatic protocol detection
-		//Send("ats0");  // no spaces in response
-		//Send("atl0");  // no linefeeds after \r
-		*/
-
 	}
 
 	UsbConnection::~UsbConnection() {
-		//int closeStatus = ftdi_usb_close(&context);
-		// if(closeStatus < 0) throw error
 
-		//ftdi_deinit(&context);
 	}
 
 	std::vector<uint8_t> UsbConnection::Fetch(std::string data) {		
-		/*const int MAX_LEN = 64;
-		  unsigned char temp[MAX_LEN];
-
-		  memset(temp, 0, MAX_LEN);
-		//		PurgeRxBuffer();
-		Send(data);
-
-		while(temp[0] != '4') int len = ftdi_read_data(&context, temp, MAX_LEN);
-
-		// if(len < 0) throw error */
-
 		struct ftdi_context ftdic; /* FTDI context */
 		/* line properties */
 		enum ftdi_bits_type bits = BITS_8; // 8 data bits
@@ -140,12 +101,6 @@ namespace piagnostics {
 			//	return EXIT_FAILURE;             
 		}
 
-		//while (1) {
-		//		j = 0;
-
-		//while ( ( ret = getchar() ) != 0x0a && j < 128) tx[j++] = ret;
-		//	if (!j) continue;
-
 		for(j = 0; j < data.length(); j++) tx[j] = (char)data[j];		
 		tx[j++] = 0x0d; /* end */
 		ret = 0;
@@ -155,35 +110,13 @@ namespace piagnostics {
 			ret += ftdi_write_data(&ftdic, tx+i, sizeof(unsigned char) * 1);      
 		}
 
-		//	printf("Written %d bytes of data: ", ret);
-		//	for (i = 0; i < ret; i++) printf("0x%x ", tx[i]);  
-
-		//	printf("\n");
-
 		bool cont = true;
 
 		while(cont) {
-	//		while (cont && (!(rx[0] != '4' && rx[0] != '\r' && ret > 8) || rx[0] == 0)) {
 			sleep(1);	
 			ret = ftdi_read_data(&ftdic, rx, 128);
-				//	if (ret > 0) {
-				//	printf("Read %d bytes of data\n", ret);
-				ret -= 3; // remove > prompt
-				//	printf("\tDATA: ");
-				//	for (i = 0; i < ret; i++) printf("0x%x ",rx[i]);
-				//	printf("\n\t(");
-				//	for (i = 0; i < ret; i++) printf("%c",rx[i]);
-				//	printf(")\n");
-				//break;
-				//	} else if (ret < 0) {
-				//		fprintf(stderr, "unable to read from ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
-				//		return EXIT_FAILURE;
-				//	}
-//			}
-
+			ret -= 3; // remove > prompt
 			int len = ret;
-
-			//}
 
 			if ((ret = ftdi_usb_close(&ftdic)) < 0) {
 				fprintf(stderr, "unable to close ftdi device: %d (%s)\n", ret, ftdi_get_error_string(&ftdic));
@@ -205,12 +138,10 @@ namespace piagnostics {
 			cont = len < 2;
 
 			if(!cont) return v;
-	}
+		}
 
-	free(tx);
-	free(rx);
-
-	//return v;
+		free(tx);
+		free(rx);
 	}
 
 	void UsbConnection::PurgeBuffers() {
