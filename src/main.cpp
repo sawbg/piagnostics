@@ -8,31 +8,34 @@
 #include "listen.cpp"
 
 /**
- * 
+ * The main() function of Piagnostics.
+ *
+ * @return means nothing
  */
 int main() {
+	// starts the LCD
 	LCD lcd;	
 	lcd.Show("LOADING", "PIAGNOSTICS...");
 
+	// variable initialization
 	string line1;
 	string line2;
 	string line3;
 	string line4;
-	Changes changes;
+	Changes changes;  // holds changes in language and units
 	DiagnosticAdapter adapter;
-	Timer timer(5);
+	Timer timer(5);  // hard-coded 5 sec for timer
 
-	/*
-	 * Starts thread to poll for button push.
-	 */
+	 // Starts thread to poll for button push.
 	pthread_t lthread;
 	int res = pthread_create(&lthread, NULL, listen, (void*)&changes);
 
+	// run forever and ever
 	while(true) {
-		timer.Begin();
+		timer.Begin();  // starts timer
 
 		while(timer) {
-			change(adapter, changes);
+			change(adapter, changes);  // check for change
 			line1 = adapter.Speed() + ", " + adapter.Rpm();
 			line2 = adapter.FuelRate();
 			line3 = adapter.MinutesSinceStart();
@@ -40,7 +43,7 @@ int main() {
 			lcd.Show(line1, line2, line3, line4);
 		}
 
-		timer.Begin();
+		timer.Begin();  // restarts timer
 
 		while(timer) {
 			change(adapter, changes);
