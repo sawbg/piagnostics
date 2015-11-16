@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['oiltemperature',['OilTemperature',['../classpiagnostics_1_1DiagnosticAdapter.html#a66dd37ca1c15b14ebd71032bc5db48b9',1,'piagnostics::DiagnosticAdapter']]],
-  ['outsidetemperature',['OutsideTemperature',['../classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87',1,'piagnostics::DiagnosticAdapter']]]
+  ['milessincecodescleared',['MilesSinceCodesCleared',['../classpiagnostics_1_1DiagnosticAdapter.html#a9870f53ec8870417471235fe27b52109',1,'piagnostics::DiagnosticAdapter']]],
+  ['minutessincestart',['MinutesSinceStart',['../classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5',1,'piagnostics::DiagnosticAdapter']]]
 ];

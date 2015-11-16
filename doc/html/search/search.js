@@ -9,14 +9,16 @@ var indexSectionsWithContent =
 {
   0: "bcdefilmorstu~",
   1: "bcdltu",
-  2: "bcdefimorst~"
+  2: "bcdefilmorstu~",
+  3: "lu"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions"
+  2: "functions",
+  3: "variables"
 };
 
 function convertToId(search)

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lcd',['LCD',['../classpiagnostics_1_1LCD.html',1,'piagnostics']]]
+  ['lcd',['Lcd',['../classpiagnostics_1_1Lcd.html',1,'piagnostics']]]
 ];

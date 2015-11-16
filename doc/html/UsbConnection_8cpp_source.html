@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classpiagnostics_1_1UsbConnection.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classpiagnostics_1_1UsbConnection.html">UsbConnection</a> {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            vector&lt;uint8_t&gt; <a class="code" href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">Fetch</a>(std::string data);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            std::vector&lt;uint8_t&gt; <a class="code" href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">Fetch</a>(std::string data);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    };</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">   45</a></span>&#160;    std::vector&lt;uint8_t&gt; <a class="code" href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">UsbConnection::Fetch</a>(std::string data) {       </div>
@@ -135,48 +135,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            ret = 0;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            ftdi_usb_purge_tx_buffer(&amp;ftdic);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            ftdi_usb_purge_rx_buffer(&amp;ftdic);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">for</span> (i = 0; i &lt; j; i++) {      </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                ret += ftdi_write_data(&amp;ftdic, tx+i, <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) * 1);      </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            usleep(100000);  <span class="comment">// THIS LINE IS CRITICAL TO THIS PROGRAM!  </span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            ret = ftdi_read_data(&amp;ftdic, rx, 128);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            ret -= 3; <span class="comment">// remove &gt; prompt</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordtype">int</span> len = ret;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            ftdi_usb_close(&amp;ftdic);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            ftdi_deinit(&amp;ftdic);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordtype">bool</span> started = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            std::vector&lt;uint8_t&gt; v(rx, rx + len);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">for</span>(i = 0; i &lt; len; i++) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">if</span>(!((v[i] &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; v[i] &lt;= <span class="charliteral">&#39;9&#39;</span>) || (v[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; v[i] &lt;= <span class="charliteral">&#39;F&#39;</span>))</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        || (!started &amp;&amp; v[i] != <span class="charliteral">&#39;4&#39;</span>)) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    v.erase(v.begin() + i);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    i--;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    len--;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(v[i] == <span class="charliteral">&#39;4&#39;</span>) started = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            cont = len &lt; 2;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">if</span>(!cont) <span class="keywordflow">return</span> v;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        free(tx);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        free(rx);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classpiagnostics_1_1UsbConnection_html_a5e02a13dff49e2f333cada2086351038"><div class="ttname"><a href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">piagnostics::UsbConnection::Fetch</a></div><div class="ttdeci">vector&lt; uint8_t &gt; Fetch(std::string data)</div><div class="ttdef"><b>Definition:</b> <a href="UsbConnection_8cpp_source.html#l00045">UsbConnection.cpp:45</a></div></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            usleep(50000);  <span class="comment">// THIS LINE IS CRITICAL TO THIS PROGRAM WITH THE PI ONLY</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">for</span> (i = 0; i &lt; j; i++) {      </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                ret += ftdi_write_data(&amp;ftdic, tx+i, <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>) * 1);      </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            usleep(200000);  <span class="comment">// THIS LINE IS CRITICAL TO THIS PROGRAM!  </span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            ret = ftdi_read_data(&amp;ftdic, rx, 128);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            ret -= 3; <span class="comment">// remove &gt; prompt</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">int</span> len = ret;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            ftdi_usb_close(&amp;ftdic);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            ftdi_deinit(&amp;ftdic);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordtype">bool</span> started = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            std::vector&lt;uint8_t&gt; v(rx, rx + len);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">for</span>(i = 0; i &lt; len; i++) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span>(!((v[i] &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; v[i] &lt;= <span class="charliteral">&#39;9&#39;</span>) || (v[i] &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; v[i] &lt;= <span class="charliteral">&#39;F&#39;</span>))</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        || (!started &amp;&amp; v[i] != <span class="charliteral">&#39;4&#39;</span>)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    v.erase(v.begin() + i);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    i--;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    len--;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(v[i] == <span class="charliteral">&#39;4&#39;</span>) started = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            cont = len &lt; 2;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span>(!cont) <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        free(tx);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        free(rx);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classpiagnostics_1_1UsbConnection_html_a5e02a13dff49e2f333cada2086351038"><div class="ttname"><a href="classpiagnostics_1_1UsbConnection.html#a5e02a13dff49e2f333cada2086351038">piagnostics::UsbConnection::Fetch</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; Fetch(std::string data)</div><div class="ttdef"><b>Definition:</b> <a href="UsbConnection_8cpp_source.html#l00045">UsbConnection.cpp:45</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1UsbConnection_html"><div class="ttname"><a href="classpiagnostics_1_1UsbConnection.html">piagnostics::UsbConnection</a></div><div class="ttdef"><b>Definition:</b> <a href="UsbConnection_8cpp_source.html#l00022">UsbConnection.cpp:22</a></div></div>
 <div class="ttc" id="namespacepiagnostics_html"><div class="ttname"><a href="namespacepiagnostics.html">piagnostics</a></div><div class="ttdef"><b>Definition:</b> <a href="BluetoothConnection_8cpp_source.html#l00019">BluetoothConnection.cpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 16:16:12 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 15 2015 19:41:55 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

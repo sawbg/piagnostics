@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>My Project: piagnostics::Changes Class Reference</title>
+<title>My Project: piagnostics::Lcd Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,109 +80,103 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>piagnostics</b></li><li class="navelem"><a class="el" href="classpiagnostics_1_1Changes.html">Changes</a></li>  </ul>
+<li class="navelem"><b>piagnostics</b></li><li class="navelem"><a class="el" href="classpiagnostics_1_1Lcd.html">Lcd</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="classpiagnostics_1_1Changes-members.html">List of all members</a>  </div>
+<a href="classpiagnostics_1_1Lcd-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">piagnostics::Changes Class Reference</div>  </div>
+<div class="title">piagnostics::Lcd Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acaaa2e53b90c1e0c9a6b68cbfabcf77b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiagnostics_1_1Changes.html#acaaa2e53b90c1e0c9a6b68cbfabcf77b">LangChanged</a> ()</td></tr>
-<tr class="separator:acaaa2e53b90c1e0c9a6b68cbfabcf77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4a1d33accca3a7857ef5497cfb6e33f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiagnostics_1_1Changes.html#ae4a1d33accca3a7857ef5497cfb6e33f">UnitsChanged</a> ()</td></tr>
-<tr class="separator:ae4a1d33accca3a7857ef5497cfb6e33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:acaa8611f424e2febb0610380d78d4364"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiagnostics_1_1Changes.html#acaa8611f424e2febb0610380d78d4364">lang</a> = false</td></tr>
-<tr class="separator:acaa8611f424e2febb0610380d78d4364"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0fdfbe586c69756d7b56866ff4faf5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiagnostics_1_1Changes.html#afe0fdfbe586c69756d7b56866ff4faf5">units</a> = false</td></tr>
-<tr class="separator:afe0fdfbe586c69756d7b56866ff4faf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff5a6efdf5ab5ff6996a91796b6414f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiagnostics_1_1Lcd.html#a5ff5a6efdf5ab5ff6996a91796b6414f">Lcd</a> ()</td></tr>
+<tr class="separator:a5ff5a6efdf5ab5ff6996a91796b6414f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67921ba18438d8b792110a3ab68e2df1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1">Show</a> (std::string first, std::string second=&quot;&quot;, std::string third=&quot;&quot;, std::string fourth=&quot;&quot;)</td></tr>
+<tr class="separator:a67921ba18438d8b792110a3ab68e2df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class serves as a container for changes in the adapter lanugage and system of measurements to be stored until they are enacted. </p>
+<div class="textblock"><p>This class is a wrapper around the necessary functions in wiringPi.h and lcd.h.</p>
+<p>The design of the LCD screen and its wiring to the Pi that is used in Piagnostics is hard-coded into this class. Thus, this class caters to 4x20 screen layouts. </p>
 
-<p>Definition at line <a class="el" href="Changes_8cpp_source.html#l00010">10</a> of file <a class="el" href="Changes_8cpp_source.html">Changes.cpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acaaa2e53b90c1e0c9a6b68cbfabcf77b"></a>
+<p>Definition at line <a class="el" href="Lcd_8cpp_source.html#l00016">16</a> of file <a class="el" href="Lcd_8cpp_source.html">Lcd.cpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a5ff5a6efdf5ab5ff6996a91796b6414f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool piagnostics::Changes::LangChanged </td>
+          <td class="memname">piagnostics::Lcd::Lcd </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns whether the language has changed and clears this internal boolean value.</p>
-<dl class="section return"><dt>Returns</dt><dd>true if the language has changed since it was last reset </dd></dl>
+<p>Initializes the LCD screen based on hard-coded Wiring Pi pin numbers. </p>
 
-<p>Definition at line <a class="el" href="Changes_8cpp_source.html#l00046">46</a> of file <a class="el" href="Changes_8cpp_source.html">Changes.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Lcd_8cpp_source.html#l00099">99</a> of file <a class="el" href="Lcd_8cpp_source.html">Lcd.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae4a1d33accca3a7857ef5497cfb6e33f"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a67921ba18438d8b792110a3ab68e2df1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool piagnostics::Changes::UnitsChanged </td>
+          <td class="memname">void piagnostics::Lcd::Show </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>second</em> = <code>&quot;&quot;</code>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns whether the system of measurements has changed and clears this internal boolena value.</p>
-<dl class="section return"><dt>Returns</dt><dd>true if the system of measurements has changed since it was last reset </dd></dl>
-
-<p>Definition at line <a class="el" href="Changes_8cpp_source.html#l00052">52</a> of file <a class="el" href="Changes_8cpp_source.html">Changes.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="acaa8611f424e2febb0610380d78d4364"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">bool piagnostics::Changes::lang = false</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>third</em> = <code>&quot;&quot;</code>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p>Whether the language has changed since the last "clearing". Shold ONLY be called by the change() function. </p>
-
-<p>Definition at line <a class="el" href="Changes_8cpp_source.html#l00018">18</a> of file <a class="el" href="Changes_8cpp_source.html">Changes.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afe0fdfbe586c69756d7b56866ff4faf5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">bool piagnostics::Changes::units = false</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fourth</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Whether the system of measurements has changed since the last "clearing". Should ONLY be called by the change() function. </p>
+<p>Displays one to four lines of text on the LCD.</p>
+<p>Note that this function prints text on the screen from the top downwards. Even though three of the four parameters are optional, a blank row on the LCD separating two rows requires an empty string to be passed to this function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>the &lt;=20 character string to display in the top row of the LCD screen</td></tr>
+    <tr><td class="paramname">second</td><td>the (optional) &lt;=20 character string to display in the second row from the top of the LCD screen</td></tr>
+    <tr><td class="paramname">thrid</td><td>the (optional) &lt;=20 character string to display in the third row from the top of the LCD screen</td></tr>
+    <tr><td class="paramname">fourth</td><td>the (optional) </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="Changes_8cpp_source.html#l00025">25</a> of file <a class="el" href="Changes_8cpp_source.html">Changes.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Lcd_8cpp_source.html#l00123">123</a> of file <a class="el" href="Lcd_8cpp_source.html">Lcd.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="Changes_8cpp_source.html">Changes.cpp</a></li>
+<li>src/<a class="el" href="Lcd_8cpp_source.html">Lcd.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

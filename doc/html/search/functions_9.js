@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['send',['Send',['../classpiagnostics_1_1BluetoothConnection.html#aabb076c8ffff613b5310f0db3a22e5af',1,'piagnostics::BluetoothConnection']]],
-  ['speed',['Speed',['../classpiagnostics_1_1DiagnosticAdapter.html#a00ef2661843feaed8f9e160808a3b2b7',1,'piagnostics::DiagnosticAdapter']]]
+  ['rpm',['Rpm',['../classpiagnostics_1_1DiagnosticAdapter.html#acee5a332f6500b3bc5924432a8cb10b5',1,'piagnostics::DiagnosticAdapter']]],
+  ['running',['Running',['../classpiagnostics_1_1Timer.html#a788fb2fed465375d76c693ecaac62b8d',1,'piagnostics::Timer']]]
 ];
