@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,27 +88,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">conversions.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CONVERSIONS_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CONVERSIONS_H</span></div>
+<a href="conversions_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CONVERSIONS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="conversions_8cpp.html#a5317f827dabb76ed2de8acaa1df2d914">    2</a></span>&#160;<span class="preprocessor">#define CONVERSIONS_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Pid.cpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Units.cpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Pid_8cpp.html">Pid.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Units_8cpp.html">Units.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepiagnostics.html">piagnostics</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">short</span> to_fahrenheit(<span class="keywordtype">short</span> temp) { <span class="keywordflow">return</span> 1.8 * temp + 32; }</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespacepiagnostics.html#a852f203c090814c7912056c96a5e302b">   16</a></span>&#160;    <span class="keywordtype">short</span> <a class="code" href="namespacepiagnostics.html#a852f203c090814c7912056c96a5e302b">to_fahrenheit</a>(<span class="keywordtype">short</span> temp) { <span class="keywordflow">return</span> 1.8 * temp + 32; }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">short</span> to_mph(<span class="keywordtype">short</span> kph) { <span class="keywordflow">return</span> (<span class="keywordtype">short</span>)(kph * 0.621371); }</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespacepiagnostics.html#ae0c74a2052d7dae5c673ddf69a4682ff">   26</a></span>&#160;    <span class="keywordtype">short</span> <a class="code" href="namespacepiagnostics.html#ae0c74a2052d7dae5c673ddf69a4682ff">to_mph</a>(<span class="keywordtype">short</span> kph) { <span class="keywordflow">return</span> (<span class="keywordtype">short</span>)(kph * 0.621371); }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">short</span> to_psi(<span class="keywordtype">short</span> kpa) { <span class="keywordflow">return</span> (<span class="keywordtype">short</span>)(0.145 * kpa); }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacepiagnostics.html#a94b8fa41783f433449d7a766f4d45445">   36</a></span>&#160;    <span class="keywordtype">short</span> <a class="code" href="namespacepiagnostics.html#a94b8fa41783f433449d7a766f4d45445">to_psi</a>(<span class="keywordtype">short</span> kpa) { <span class="keywordflow">return</span> (<span class="keywordtype">short</span>)(0.145 * kpa); }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespacepiagnostics_html"><div class="ttname"><a href="namespacepiagnostics.html">piagnostics</a></div><div class="ttdef"><b>Definition:</b> <a href="BluetoothConnection_8cpp_source.html#l00019">BluetoothConnection.cpp:19</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a852f203c090814c7912056c96a5e302b"><div class="ttname"><a href="namespacepiagnostics.html#a852f203c090814c7912056c96a5e302b">piagnostics::to_fahrenheit</a></div><div class="ttdeci">short to_fahrenheit(short temp)</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00016">conversions.cpp:16</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_ae0c74a2052d7dae5c673ddf69a4682ff"><div class="ttname"><a href="namespacepiagnostics.html#ae0c74a2052d7dae5c673ddf69a4682ff">piagnostics::to_mph</a></div><div class="ttdeci">short to_mph(short kph)</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00026">conversions.cpp:26</a></div></div>
+<div class="ttc" id="Units_8cpp_html"><div class="ttname"><a href="Units_8cpp.html">Units.cpp</a></div></div>
+<div class="ttc" id="Pid_8cpp_html"><div class="ttname"><a href="Pid_8cpp.html">Pid.cpp</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a94b8fa41783f433449d7a766f4d45445"><div class="ttname"><a href="namespacepiagnostics.html#a94b8fa41783f433449d7a766f4d45445">piagnostics::to_psi</a></div><div class="ttdeci">short to_psi(short kpa)</div><div class="ttdef"><b>Definition:</b> <a href="conversions_8cpp_source.html#l00036">conversions.cpp:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 19:41:55 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2015 00:02:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

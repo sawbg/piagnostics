@@ -7,18 +7,28 @@
 
 var indexSectionsWithContent =
 {
-  0: "bcdefilmorstu~",
+  0: "abcdefgilmoprstu~",
   1: "bcdltu",
-  2: "bcdefilmorstu~",
-  3: "lu"
+  2: "p",
+  3: "bcdlmptu",
+  4: "bcdefilmorstu~",
+  5: "lu",
+  6: "lpu",
+  7: "abcdefgimoprst",
+  8: "bcdlptu"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions",
-  3: "variables"
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "variables",
+  6: "enums",
+  7: "enumvalues",
+  8: "defines"
 };
 
 function convertToId(search)

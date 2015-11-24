@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,26 +88,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">change.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef change_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define change_H</span></div>
+<a href="change_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef change_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="change_8cpp.html#a0ca82cb06a0702ce0e0fbd8762cabe8e">    2</a></span>&#160;<span class="preprocessor">#define change_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Changes.cpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;DiagnosticAdapter.cpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Changes_8cpp.html">Changes.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DiagnosticAdapter_8cpp.html">DiagnosticAdapter.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepiagnostics.html">piagnostics</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> change(DiagnosticAdapter&amp; adapter, Changes&amp; changes) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(changes.LangChanged()) adapter.ToggleLanguage();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">if</span>(changes.UnitsChanged()) adapter.ToggleUnits();</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">   18</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">change</a>(<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html">DiagnosticAdapter</a>&amp; adapter, <a class="code" href="classpiagnostics_1_1Changes.html">Changes</a>&amp; changes) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(changes.<a class="code" href="classpiagnostics_1_1Changes.html#acaaa2e53b90c1e0c9a6b68cbfabcf77b">LangChanged</a>()) adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#aa223af9d072a565a664d3af1f2909ffc">ToggleLanguage</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">if</span>(changes.<a class="code" href="classpiagnostics_1_1Changes.html#ae4a1d33accca3a7857ef5497cfb6e33f">UnitsChanged</a>()) adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a6125307100979e18a0286f4ed0444cb4">ToggleUnits</a>();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classpiagnostics_1_1Changes_html_ae4a1d33accca3a7857ef5497cfb6e33f"><div class="ttname"><a href="classpiagnostics_1_1Changes.html#ae4a1d33accca3a7857ef5497cfb6e33f">piagnostics::Changes::UnitsChanged</a></div><div class="ttdeci">bool UnitsChanged()</div><div class="ttdef"><b>Definition:</b> <a href="Changes_8cpp_source.html#l00052">Changes.cpp:52</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a6125307100979e18a0286f4ed0444cb4"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a6125307100979e18a0286f4ed0444cb4">piagnostics::DiagnosticAdapter::ToggleUnits</a></div><div class="ttdeci">void ToggleUnits()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00415">DiagnosticAdapter.cpp:415</a></div></div>
 <div class="ttc" id="namespacepiagnostics_html"><div class="ttname"><a href="namespacepiagnostics.html">piagnostics</a></div><div class="ttdef"><b>Definition:</b> <a href="BluetoothConnection_8cpp_source.html#l00019">BluetoothConnection.cpp:19</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1Changes_html"><div class="ttname"><a href="classpiagnostics_1_1Changes.html">piagnostics::Changes</a></div><div class="ttdef"><b>Definition:</b> <a href="Changes_8cpp_source.html#l00010">Changes.cpp:10</a></div></div>
+<div class="ttc" id="DiagnosticAdapter_8cpp_html"><div class="ttname"><a href="DiagnosticAdapter_8cpp.html">DiagnosticAdapter.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_aa223af9d072a565a664d3af1f2909ffc"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#aa223af9d072a565a664d3af1f2909ffc">piagnostics::DiagnosticAdapter::ToggleLanguage</a></div><div class="ttdeci">void ToggleLanguage()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00411">DiagnosticAdapter.cpp:411</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1Changes_html_acaaa2e53b90c1e0c9a6b68cbfabcf77b"><div class="ttname"><a href="classpiagnostics_1_1Changes.html#acaaa2e53b90c1e0c9a6b68cbfabcf77b">piagnostics::Changes::LangChanged</a></div><div class="ttdeci">bool LangChanged()</div><div class="ttdef"><b>Definition:</b> <a href="Changes_8cpp_source.html#l00046">Changes.cpp:46</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_ae93df5d8638c89c56499a6feb2d86edb"><div class="ttname"><a href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">piagnostics::change</a></div><div class="ttdeci">void change(DiagnosticAdapter &amp;adapter, Changes &amp;changes)</div><div class="ttdef"><b>Definition:</b> <a href="change_8cpp_source.html#l00018">change.cpp:18</a></div></div>
+<div class="ttc" id="Changes_8cpp_html"><div class="ttname"><a href="Changes_8cpp.html">Changes.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html">piagnostics::DiagnosticAdapter</a></div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00032">DiagnosticAdapter.cpp:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 19:41:55 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2015 00:02:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,13 +88,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">listen.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef listen_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define listen_H</span></div>
+<a href="listen_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef listen_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="listen_8cpp.html#a6e05ee9b4fb38e5a30058d9f81fd32d0">    2</a></span>&#160;<span class="preprocessor">#define listen_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;wiringPi.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Changes.cpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Changes_8cpp.html">Changes.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepiagnostics.html">piagnostics</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
@@ -116,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * @return a void pointer to the pthread_t structure for this thread</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span>* listen(<span class="keywordtype">void</span>* givenChanges) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacepiagnostics.html#a43e7533691be46cedeeded2da2b2762a">   31</a></span>&#160;<span class="keywordtype">void</span>* <a class="code" href="namespacepiagnostics.html#a43e7533691be46cedeeded2da2b2762a">listen</a>(<span class="keywordtype">void</span>* givenChanges) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> PIN = 4;  <span class="comment">// pin to read</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> buttonValue;  <span class="comment">// button value (unpressed = true, pressed = false)</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    pinMode(PIN, INPUT);  <span class="comment">// initialize pin</span></div>
@@ -135,8 +137,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">         * that the moment that Imperial units will always beused with</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         * English and metric units with German.</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ((Changes*)givenChanges)-&gt;units = !buttonValue;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ((Changes*)givenChanges)-&gt;lang = !buttonValue;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ((<a class="code" href="classpiagnostics_1_1Changes.html">Changes</a>*)givenChanges)-&gt;units = !buttonValue;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ((<a class="code" href="classpiagnostics_1_1Changes.html">Changes</a>*)givenChanges)-&gt;lang = !buttonValue;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        usleep(100);  <span class="comment">// so it&#39;s not constantly polling</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
@@ -146,10 +148,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespacepiagnostics_html"><div class="ttname"><a href="namespacepiagnostics.html">piagnostics</a></div><div class="ttdef"><b>Definition:</b> <a href="BluetoothConnection_8cpp_source.html#l00019">BluetoothConnection.cpp:19</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a43e7533691be46cedeeded2da2b2762a"><div class="ttname"><a href="namespacepiagnostics.html#a43e7533691be46cedeeded2da2b2762a">piagnostics::listen</a></div><div class="ttdeci">void * listen(void *givenChanges)</div><div class="ttdef"><b>Definition:</b> <a href="listen_8cpp_source.html#l00031">listen.cpp:31</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1Changes_html"><div class="ttname"><a href="classpiagnostics_1_1Changes.html">piagnostics::Changes</a></div><div class="ttdef"><b>Definition:</b> <a href="Changes_8cpp_source.html#l00010">Changes.cpp:10</a></div></div>
+<div class="ttc" id="Changes_8cpp_html"><div class="ttname"><a href="Changes_8cpp.html">Changes.cpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 19:41:55 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2015 00:02:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

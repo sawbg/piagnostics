@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,56 +88,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Pid.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef Pid_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define Pid_H</span></div>
+<a href="Pid_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef Pid_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="Pid_8cpp.html#a63a1a69772a8a70c33bf93c4c67f876c">    2</a></span>&#160;<span class="preprocessor">#define Pid_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacepiagnostics.html">piagnostics</a> {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">enum class</span> Pid : int {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        PidsSupported0,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        StatusSinceCleared,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        FreezeDtc,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        FuelSystemStatus,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        EngineLoad,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        CoolantTemp,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        FuelPressure = 0x0A,  <span class="comment">// gauge</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        IntakeManifoldPressure,  <span class="comment">// absolute</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        Rpm,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        Speed,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        TimingAdvance,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        IntakeAirTemp,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        AirFlowRate,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        ThrottlePosition,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        SecondsSinceStart = 0x1F,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        PidsSupported20,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        MilesWithLightOn,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        FuelRailPressure,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        MilesSinceCodesCleared = 0x31,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        BarometricPressure = 0x33,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        PidsSupported40 = 0x40,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        DriveCycleStatus,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        ControlModuleVoltage,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        AbsoluteLoad,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        FuelAirRatio,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        RelativeThrottlePosition,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        OutsideTemperature,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        MinutesWithLightOn = 0x4D,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        MinutesSinceCodesCleared,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        FuelType,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        EthanolPercent,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        RelativePedalPosition = 0x5A,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        OilTemp = 0x5C,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        FuelInjectionTiming,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        FuelRate</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4b">   10</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4b">Pid</a> : int {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba32c6407452d8f589c1edaa3e965abb7b">PidsSupported0</a>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba28c3a8898ef008b7c56edefb628255fe">StatusSinceCleared</a>,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba1ffeeca5678edaa95d5bb5686de94a21">FreezeDtc</a>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba18835878daa58a9a224b847cf8833a5d">FuelSystemStatus</a>,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba1e7a21ff3f4607475d644804494dd09c">EngineLoad</a>,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba570eb2a2cb34dd0883920648239ead21">CoolantTemp</a>,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bac596e98ef5a7364b2f5cd9bc238be32b">FuelPressure</a> = 0x0A,  <span class="comment">// gauge</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba2da282deb26ee77d8eeb1771d7d85220">IntakeManifoldPressure</a>,  <span class="comment">// absolute</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4babfbb9bf22207805b46664fc3576f1701">Rpm</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba44877c6aa8e93fa5a91c9361211464fb">Speed</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba629e4971a2b8c0e63210b2ff05b08103">TimingAdvance</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba5f2c7bc1f7bd1bd3276b498c2e25237b">IntakeAirTemp</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bad0a4841f535f7de765c35875eea7264d">AirFlowRate</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba7e8619e27e181c3a9d6e4480b3866751">ThrottlePosition</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baf6cb9b8d5a6d977351adc499c12b3d25">SecondsSinceStart</a> = 0x1F,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba869cd52ce8b76e12197064f654b76a10">PidsSupported20</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba9db66b1b4dc1b3f9d969dd84f8616d90">MilesWithLightOn</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba39d74b92fb471ab927cf43dc5389d128">FuelRailPressure</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba1fc1abca32645ff690e757f3c057b535">MilesSinceCodesCleared</a> = 0x31,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4badc05b2eb44f0c7071b091efa6c57d241">BarometricPressure</a> = 0x33,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bacf2bf5e9f14a7024c72682c1befcbb65">PidsSupported40</a> = 0x40,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bafb8b708e18d7d1ac3b1135b8e3d8b811">DriveCycleStatus</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba6379ea19c4729c90a280260e1f64140d">ControlModuleVoltage</a>,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bac8944084aa96a3e51eb1277efab1059b">AbsoluteLoad</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba5644396504763f2d40b09997db5d9cc2">FuelAirRatio</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba393de494b10dfcaf663b0676ba6d7f7d">RelativeThrottlePosition</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba46974a524114913850b986d2099dada7">OutsideTemperature</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baf140a3d1db61e2102ed727c6a0e9171b">MinutesWithLightOn</a> = 0x4D,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba276879e58b523c820bc12ed1b227ae4c">MinutesSinceCodesCleared</a>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baa70e3917584576683292e667e4071133">FuelType</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bad95d51d4151317f991ea0808d6dbb353">EthanolPercent</a>,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba8fd8e544d5eeba9612630038a631285f">RelativePedalPosition</a> = 0x5A,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba9df40ef9ddfe967e9b0eb48d144adf27">OilTemp</a> = 0x5C,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baf7d7f25e0683100ea6e4f1728901dfae">FuelInjectionTiming</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bad85c15a9571fa98212d377d6b1f5ed76">FuelRate</a></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4baf140a3d1db61e2102ed727c6a0e9171b"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baf140a3d1db61e2102ed727c6a0e9171b">piagnostics::Pid::MinutesWithLightOn</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4baf6cb9b8d5a6d977351adc499c12b3d25"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baf6cb9b8d5a6d977351adc499c12b3d25">piagnostics::Pid::SecondsSinceStart</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba1fc1abca32645ff690e757f3c057b535"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba1fc1abca32645ff690e757f3c057b535">piagnostics::Pid::MilesSinceCodesCleared</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba28c3a8898ef008b7c56edefb628255fe"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba28c3a8898ef008b7c56edefb628255fe">piagnostics::Pid::StatusSinceCleared</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba5644396504763f2d40b09997db5d9cc2"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba5644396504763f2d40b09997db5d9cc2">piagnostics::Pid::FuelAirRatio</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba869cd52ce8b76e12197064f654b76a10"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba869cd52ce8b76e12197064f654b76a10">piagnostics::Pid::PidsSupported20</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4babfbb9bf22207805b46664fc3576f1701"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4babfbb9bf22207805b46664fc3576f1701">piagnostics::Pid::Rpm</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba46974a524114913850b986d2099dada7"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba46974a524114913850b986d2099dada7">piagnostics::Pid::OutsideTemperature</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba1ffeeca5678edaa95d5bb5686de94a21"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba1ffeeca5678edaa95d5bb5686de94a21">piagnostics::Pid::FreezeDtc</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4badc05b2eb44f0c7071b091efa6c57d241"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4badc05b2eb44f0c7071b091efa6c57d241">piagnostics::Pid::BarometricPressure</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4bacf2bf5e9f14a7024c72682c1befcbb65"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bacf2bf5e9f14a7024c72682c1befcbb65">piagnostics::Pid::PidsSupported40</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4bad95d51d4151317f991ea0808d6dbb353"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bad95d51d4151317f991ea0808d6dbb353">piagnostics::Pid::EthanolPercent</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba9df40ef9ddfe967e9b0eb48d144adf27"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba9df40ef9ddfe967e9b0eb48d144adf27">piagnostics::Pid::OilTemp</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4bad0a4841f535f7de765c35875eea7264d"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bad0a4841f535f7de765c35875eea7264d">piagnostics::Pid::AirFlowRate</a></div></div>
 <div class="ttc" id="namespacepiagnostics_html"><div class="ttname"><a href="namespacepiagnostics.html">piagnostics</a></div><div class="ttdef"><b>Definition:</b> <a href="BluetoothConnection_8cpp_source.html#l00019">BluetoothConnection.cpp:19</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba276879e58b523c820bc12ed1b227ae4c"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba276879e58b523c820bc12ed1b227ae4c">piagnostics::Pid::MinutesSinceCodesCleared</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba7e8619e27e181c3a9d6e4480b3866751"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba7e8619e27e181c3a9d6e4480b3866751">piagnostics::Pid::ThrottlePosition</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba39d74b92fb471ab927cf43dc5389d128"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba39d74b92fb471ab927cf43dc5389d128">piagnostics::Pid::FuelRailPressure</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4baa70e3917584576683292e667e4071133"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baa70e3917584576683292e667e4071133">piagnostics::Pid::FuelType</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba629e4971a2b8c0e63210b2ff05b08103"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba629e4971a2b8c0e63210b2ff05b08103">piagnostics::Pid::TimingAdvance</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4bafb8b708e18d7d1ac3b1135b8e3d8b811"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bafb8b708e18d7d1ac3b1135b8e3d8b811">piagnostics::Pid::DriveCycleStatus</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba393de494b10dfcaf663b0676ba6d7f7d"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba393de494b10dfcaf663b0676ba6d7f7d">piagnostics::Pid::RelativeThrottlePosition</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4bac8944084aa96a3e51eb1277efab1059b"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bac8944084aa96a3e51eb1277efab1059b">piagnostics::Pid::AbsoluteLoad</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4b"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4b">piagnostics::Pid</a></div><div class="ttdeci">Pid</div><div class="ttdef"><b>Definition:</b> <a href="Pid_8cpp_source.html#l00010">Pid.cpp:10</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba18835878daa58a9a224b847cf8833a5d"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba18835878daa58a9a224b847cf8833a5d">piagnostics::Pid::FuelSystemStatus</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba6379ea19c4729c90a280260e1f64140d"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba6379ea19c4729c90a280260e1f64140d">piagnostics::Pid::ControlModuleVoltage</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba44877c6aa8e93fa5a91c9361211464fb"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba44877c6aa8e93fa5a91c9361211464fb">piagnostics::Pid::Speed</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4baf7d7f25e0683100ea6e4f1728901dfae"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4baf7d7f25e0683100ea6e4f1728901dfae">piagnostics::Pid::FuelInjectionTiming</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba2da282deb26ee77d8eeb1771d7d85220"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba2da282deb26ee77d8eeb1771d7d85220">piagnostics::Pid::IntakeManifoldPressure</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4bac596e98ef5a7364b2f5cd9bc238be32b"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bac596e98ef5a7364b2f5cd9bc238be32b">piagnostics::Pid::FuelPressure</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba8fd8e544d5eeba9612630038a631285f"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba8fd8e544d5eeba9612630038a631285f">piagnostics::Pid::RelativePedalPosition</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba9db66b1b4dc1b3f9d969dd84f8616d90"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba9db66b1b4dc1b3f9d969dd84f8616d90">piagnostics::Pid::MilesWithLightOn</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba32c6407452d8f589c1edaa3e965abb7b"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba32c6407452d8f589c1edaa3e965abb7b">piagnostics::Pid::PidsSupported0</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba1e7a21ff3f4607475d644804494dd09c"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba1e7a21ff3f4607475d644804494dd09c">piagnostics::Pid::EngineLoad</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4bad85c15a9571fa98212d377d6b1f5ed76"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4bad85c15a9571fa98212d377d6b1f5ed76">piagnostics::Pid::FuelRate</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba5f2c7bc1f7bd1bd3276b498c2e25237b"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba5f2c7bc1f7bd1bd3276b498c2e25237b">piagnostics::Pid::IntakeAirTemp</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a82428e076a83a6d3c979110a22dbab4ba570eb2a2cb34dd0883920648239ead21"><div class="ttname"><a href="namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba570eb2a2cb34dd0883920648239ead21">piagnostics::Pid::CoolantTemp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 19:41:55 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2015 00:02:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

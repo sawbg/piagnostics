@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,25 +88,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">main.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;lcd.h&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;wiringPi.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;change.cpp&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Changes.cpp&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;DiagnosticAdapter.cpp&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;Language.cpp&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;Lcd.cpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;listen.cpp&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;Timer.cpp&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;Units.cpp&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="change_8cpp.html">change.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Changes_8cpp.html">Changes.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DiagnosticAdapter_8cpp.html">DiagnosticAdapter.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Language_8cpp.html">Language.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Lcd_8cpp.html">Lcd.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="listen_8cpp.html">listen.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Timer_8cpp.html">Timer.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Units_8cpp.html">Units.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacepiagnostics.html">piagnostics</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span> main() {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   24</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// starts the LCD</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classpiagnostics_1_1Lcd.html">Lcd</a> lcd;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    lcd.<a class="code" href="classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1">Show</a>(<span class="stringliteral">&quot;LOADING&quot;</span>, <span class="stringliteral">&quot;PIAGNOSTICS...&quot;</span>);</div>
@@ -115,69 +117,97 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string line3;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string line4;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classpiagnostics_1_1Changes.html">Changes</a> changes;  <span class="comment">// holds changes in language and units</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html">DiagnosticAdapter</a> adapter(English, Units::Imperial);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html">DiagnosticAdapter</a> adapter(<a class="code" href="Language_8cpp.html#a315ca917ad583797f709ea477dd28705a49bfa7fcc3d94cb262ab0af5f668b74d">English</a>, <a class="code" href="Units_8cpp.html#ac33d2b1fdba15c8bfb494f9cf0ef4190ae6af7b29ffe62b0b607b8fcbe812303c">Units::Imperial</a>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classpiagnostics_1_1Timer.html">Timer</a> timer(5);  <span class="comment">// hard-coded 5 sec for timer</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;     <span class="comment">// Starts thread to poll for button push.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    pthread_t lthread;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> res = pthread_create(&amp;lthread, NULL, listen, (<span class="keywordtype">void</span>*)&amp;changes);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> res = pthread_create(&amp;lthread, NULL, <a class="code" href="namespacepiagnostics.html#a43e7533691be46cedeeded2da2b2762a">listen</a>, (<span class="keywordtype">void</span>*)&amp;changes);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// run forever and ever</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        timer.Begin();  <span class="comment">// starts timer</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        timer.<a class="code" href="classpiagnostics_1_1Timer.html#ab9c355bb23fd69557c7c6929b486e781">Begin</a>();  <span class="comment">// starts timer</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span>(timer) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            change(adapter, changes);  <span class="comment">// check for change</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            line1 = adapter.Speed() + <span class="stringliteral">&quot;, &quot;</span> + adapter.Rpm();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            line2 = adapter.FuelRate();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            line3 = adapter.MinutesSinceStart();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            line4 = adapter.CheckEngineLight();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">change</a>(adapter, changes);  <span class="comment">// check for change</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            line1 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a00ef2661843feaed8f9e160808a3b2b7">Speed</a>() + <span class="stringliteral">&quot;, &quot;</span> + adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#acee5a332f6500b3bc5924432a8cb10b5">Rpm</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            line2 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a5f7db6b33e9d1cf4b8af324a605dc10e">FuelRate</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            line3 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5">MinutesSinceStart</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            line4 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a61c090792d6fa83d532b7a60349ca180">CheckEngineLight</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            lcd.<a class="code" href="classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1">Show</a>(line1, line2, line3, line4);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        timer.Begin();  <span class="comment">// restarts timer</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        timer.<a class="code" href="classpiagnostics_1_1Timer.html#ab9c355bb23fd69557c7c6929b486e781">Begin</a>();  <span class="comment">// restarts timer</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">while</span>(timer) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            change(adapter, changes);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">change</a>(adapter, changes);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            line1 = <span class="stringliteral">&quot;yo&quot;</span>;<span class="comment">// inside</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                line2 = adapter.OutsideTemperature();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                line2 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87">OutsideTemperature</a>();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            line3 = <span class="stringliteral">&quot;hey&quot;</span>;<span class="comment">//adapter.OilTemperature();</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            line4 = adapter.CoolantTemp();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            line4 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a3964f618fca7dd147bdc5fc42c52ed6d">CoolantTemp</a>();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            lcd.<a class="code" href="classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1">Show</a>(line1, line2, line3, line4);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        timer.Begin();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        timer.<a class="code" href="classpiagnostics_1_1Timer.html#ab9c355bb23fd69557c7c6929b486e781">Begin</a>();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">while</span>(timer) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            change(adapter, changes);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            line1 = adapter.BarometricPressure();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            line2 = adapter.IntakeManifoldPressure();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            line3 = adapter.EngineLoad();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            line4 = adapter.MilesSinceCodesCleared();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">change</a>(adapter, changes);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            line1 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a339c1e30d864165ba8c75e8a9c3db470">BarometricPressure</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            line2 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#ab714358169a647a033ee8d5f9723a4e6">IntakeManifoldPressure</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            line3 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a21f361fc2df4b58571b69f2c74572588">EngineLoad</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            line4 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a9870f53ec8870417471235fe27b52109">MilesSinceCodesCleared</a>();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            lcd.<a class="code" href="classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1">Show</a>(line1, line2, line3, line4);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        timer.Begin();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        timer.<a class="code" href="classpiagnostics_1_1Timer.html#ab9c355bb23fd69557c7c6929b486e781">Begin</a>();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">while</span>(timer) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            change(adapter, changes);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            line1 = adapter.ThrottlePosition();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            line2 = adapter.TimingAdvance();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            line3 = adapter.FuelAirRatio();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">change</a>(adapter, changes);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            line1 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#ac8b7e4d350e5b790383c3d0579ccd483">ThrottlePosition</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            line2 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a1e5f634d1155645494a120fcecee812c">TimingAdvance</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            line3 = adapter.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a5601f4667a7e9af7a02dd829997ccd19">FuelAirRatio</a>();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            lcd.<a class="code" href="classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1">Show</a>(line1, line2, line3, line4);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="ttc" id="change_8cpp_html"><div class="ttname"><a href="change_8cpp.html">change.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a9870f53ec8870417471235fe27b52109"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a9870f53ec8870417471235fe27b52109">piagnostics::DiagnosticAdapter::MilesSinceCodesCleared</a></div><div class="ttdeci">std::string MilesSinceCodesCleared()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00368">DiagnosticAdapter.cpp:368</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a2bf9b6642460423efa066814588c38e5"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5">piagnostics::DiagnosticAdapter::MinutesSinceStart</a></div><div class="ttdeci">std::string MinutesSinceStart()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00375">DiagnosticAdapter.cpp:375</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a1e5f634d1155645494a120fcecee812c"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a1e5f634d1155645494a120fcecee812c">piagnostics::DiagnosticAdapter::TimingAdvance</a></div><div class="ttdeci">std::string TimingAdvance()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00405">DiagnosticAdapter.cpp:405</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a5f7db6b33e9d1cf4b8af324a605dc10e"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a5f7db6b33e9d1cf4b8af324a605dc10e">piagnostics::DiagnosticAdapter::FuelRate</a></div><div class="ttdeci">std::string FuelRate()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00355">DiagnosticAdapter.cpp:355</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_ac8b7e4d350e5b790383c3d0579ccd483"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#ac8b7e4d350e5b790383c3d0579ccd483">piagnostics::DiagnosticAdapter::ThrottlePosition</a></div><div class="ttdeci">std::string ThrottlePosition()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00399">DiagnosticAdapter.cpp:399</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1Timer_html_ab9c355bb23fd69557c7c6929b486e781"><div class="ttname"><a href="classpiagnostics_1_1Timer.html#ab9c355bb23fd69557c7c6929b486e781">piagnostics::Timer::Begin</a></div><div class="ttdeci">void Begin()</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00077">Timer.cpp:77</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a00ef2661843feaed8f9e160808a3b2b7"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a00ef2661843feaed8f9e160808a3b2b7">piagnostics::DiagnosticAdapter::Speed</a></div><div class="ttdeci">std::string Speed()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00393">DiagnosticAdapter.cpp:393</a></div></div>
 <div class="ttc" id="namespacepiagnostics_html"><div class="ttname"><a href="namespacepiagnostics.html">piagnostics</a></div><div class="ttdef"><b>Definition:</b> <a href="BluetoothConnection_8cpp_source.html#l00019">BluetoothConnection.cpp:19</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_a43e7533691be46cedeeded2da2b2762a"><div class="ttname"><a href="namespacepiagnostics.html#a43e7533691be46cedeeded2da2b2762a">piagnostics::listen</a></div><div class="ttdeci">void * listen(void *givenChanges)</div><div class="ttdef"><b>Definition:</b> <a href="listen_8cpp_source.html#l00031">listen.cpp:31</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1Changes_html"><div class="ttname"><a href="classpiagnostics_1_1Changes.html">piagnostics::Changes</a></div><div class="ttdef"><b>Definition:</b> <a href="Changes_8cpp_source.html#l00010">Changes.cpp:10</a></div></div>
+<div class="ttc" id="main_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00024">main.cpp:24</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_ab714358169a647a033ee8d5f9723a4e6"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#ab714358169a647a033ee8d5f9723a4e6">piagnostics::DiagnosticAdapter::IntakeManifoldPressure</a></div><div class="ttdeci">std::string IntakeManifoldPressure()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00360">DiagnosticAdapter.cpp:360</a></div></div>
+<div class="ttc" id="Units_8cpp_html_ac33d2b1fdba15c8bfb494f9cf0ef4190ae6af7b29ffe62b0b607b8fcbe812303c"><div class="ttname"><a href="Units_8cpp.html#ac33d2b1fdba15c8bfb494f9cf0ef4190ae6af7b29ffe62b0b607b8fcbe812303c">Units::Imperial</a></div></div>
+<div class="ttc" id="DiagnosticAdapter_8cpp_html"><div class="ttname"><a href="DiagnosticAdapter_8cpp.html">DiagnosticAdapter.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_aba0c2fe23385004d0c874a8dd1176b87"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87">piagnostics::DiagnosticAdapter::OutsideTemperature</a></div><div class="ttdeci">std::string OutsideTemperature()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00381">DiagnosticAdapter.cpp:381</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a3964f618fca7dd147bdc5fc42c52ed6d"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a3964f618fca7dd147bdc5fc42c52ed6d">piagnostics::DiagnosticAdapter::CoolantTemp</a></div><div class="ttdeci">std::string CoolantTemp()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00291">DiagnosticAdapter.cpp:291</a></div></div>
+<div class="ttc" id="Language_8cpp_html"><div class="ttname"><a href="Language_8cpp.html">Language.cpp</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1Lcd_html_a67921ba18438d8b792110a3ab68e2df1"><div class="ttname"><a href="classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1">piagnostics::Lcd::Show</a></div><div class="ttdeci">void Show(std::string first, std::string second=&quot;&quot;, std::string third=&quot;&quot;, std::string fourth=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="Lcd_8cpp_source.html#l00123">Lcd.cpp:123</a></div></div>
+<div class="ttc" id="Lcd_8cpp_html"><div class="ttname"><a href="Lcd_8cpp.html">Lcd.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_acee5a332f6500b3bc5924432a8cb10b5"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#acee5a332f6500b3bc5924432a8cb10b5">piagnostics::DiagnosticAdapter::Rpm</a></div><div class="ttdeci">std::string Rpm()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00387">DiagnosticAdapter.cpp:387</a></div></div>
+<div class="ttc" id="Units_8cpp_html"><div class="ttname"><a href="Units_8cpp.html">Units.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a5601f4667a7e9af7a02dd829997ccd19"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a5601f4667a7e9af7a02dd829997ccd19">piagnostics::DiagnosticAdapter::FuelAirRatio</a></div><div class="ttdeci">std::string FuelAirRatio()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00348">DiagnosticAdapter.cpp:348</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a21f361fc2df4b58571b69f2c74572588"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a21f361fc2df4b58571b69f2c74572588">piagnostics::DiagnosticAdapter::EngineLoad</a></div><div class="ttdeci">std::string EngineLoad()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00299">DiagnosticAdapter.cpp:299</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a339c1e30d864165ba8c75e8a9c3db470"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a339c1e30d864165ba8c75e8a9c3db470">piagnostics::DiagnosticAdapter::BarometricPressure</a></div><div class="ttdeci">std::string BarometricPressure()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00268">DiagnosticAdapter.cpp:268</a></div></div>
+<div class="ttc" id="listen_8cpp_html"><div class="ttname"><a href="listen_8cpp.html">listen.cpp</a></div></div>
+<div class="ttc" id="Language_8cpp_html_a315ca917ad583797f709ea477dd28705a49bfa7fcc3d94cb262ab0af5f668b74d"><div class="ttname"><a href="Language_8cpp.html#a315ca917ad583797f709ea477dd28705a49bfa7fcc3d94cb262ab0af5f668b74d">English</a></div><div class="ttdef"><b>Definition:</b> <a href="Language_8cpp_source.html#l00007">Language.cpp:7</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a61c090792d6fa83d532b7a60349ca180"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a61c090792d6fa83d532b7a60349ca180">piagnostics::DiagnosticAdapter::CheckEngineLight</a></div><div class="ttdeci">std::string CheckEngineLight()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00275">DiagnosticAdapter.cpp:275</a></div></div>
+<div class="ttc" id="Timer_8cpp_html"><div class="ttname"><a href="Timer_8cpp.html">Timer.cpp</a></div></div>
+<div class="ttc" id="namespacepiagnostics_html_ae93df5d8638c89c56499a6feb2d86edb"><div class="ttname"><a href="namespacepiagnostics.html#ae93df5d8638c89c56499a6feb2d86edb">piagnostics::change</a></div><div class="ttdeci">void change(DiagnosticAdapter &amp;adapter, Changes &amp;changes)</div><div class="ttdef"><b>Definition:</b> <a href="change_8cpp_source.html#l00018">change.cpp:18</a></div></div>
+<div class="ttc" id="Changes_8cpp_html"><div class="ttname"><a href="Changes_8cpp.html">Changes.cpp</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1Timer_html"><div class="ttname"><a href="classpiagnostics_1_1Timer.html">piagnostics::Timer</a></div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00027">Timer.cpp:27</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1Lcd_html"><div class="ttname"><a href="classpiagnostics_1_1Lcd.html">piagnostics::Lcd</a></div><div class="ttdef"><b>Definition:</b> <a href="Lcd_8cpp_source.html#l00016">Lcd.cpp:16</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html">piagnostics::DiagnosticAdapter</a></div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00032">DiagnosticAdapter.cpp:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 19:41:55 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2015 00:02:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

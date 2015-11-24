@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['send',['Send',['../classpiagnostics_1_1BluetoothConnection.html#aabb076c8ffff613b5310f0db3a22e5af',1,'piagnostics::BluetoothConnection']]],
-  ['show',['Show',['../classpiagnostics_1_1Lcd.html#a67921ba18438d8b792110a3ab68e2df1',1,'piagnostics::Lcd']]],
-  ['speed',['Speed',['../classpiagnostics_1_1DiagnosticAdapter.html#a00ef2661843feaed8f9e160808a3b2b7',1,'piagnostics::DiagnosticAdapter']]]
+  ['oiltemp',['OilTemp',['../namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba9df40ef9ddfe967e9b0eb48d144adf27',1,'piagnostics']]],
+  ['operator_20bool',['operator bool',['../classpiagnostics_1_1Timer.html#aeabb9d5b91ca55af6a85bfc13355c0f3',1,'piagnostics::Timer']]],
+  ['outsidetemperature',['OutsideTemperature',['../classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87',1,'piagnostics::DiagnosticAdapter::OutsideTemperature()'],['../namespacepiagnostics.html#a82428e076a83a6d3c979110a22dbab4ba46974a524114913850b986d2099dada7',1,'piagnostics::OutsideTemperature()']]]
 ];

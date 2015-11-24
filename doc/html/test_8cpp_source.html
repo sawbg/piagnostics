@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -60,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -67,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,50 +88,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">test.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<a href="test_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;DiagnosticAdapter.cpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Language.cpp&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Pid.cpp&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Units.cpp&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;UsbConnection.cpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DiagnosticAdapter_8cpp.html">DiagnosticAdapter.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Language_8cpp.html">Language.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Pid_8cpp.html">Pid.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Units_8cpp.html">Units.cpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="UsbConnection_8cpp.html">UsbConnection.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacepiagnostics.html">piagnostics</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">int</span> main() {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html">DiagnosticAdapter</a> diag(English, Units::Imperial);</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   18</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html">DiagnosticAdapter</a> diag(<a class="code" href="Language_8cpp.html#a315ca917ad583797f709ea477dd28705a49bfa7fcc3d94cb262ab0af5f668b74d">English</a>, <a class="code" href="Units_8cpp.html#ac33d2b1fdba15c8bfb494f9cf0ef4190ae6af7b29ffe62b0b607b8fcbe812303c">Units::Imperial</a>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt;= 1; i++) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        cout &lt;&lt; diag.Speed() &lt;&lt; endl;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        cout &lt;&lt; diag.Rpm() &lt;&lt; endl;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        cout &lt;&lt; diag.OutsideTemperature() &lt;&lt; endl;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        cout &lt;&lt; diag.CheckEngineLight() &lt;&lt; endl;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        cout &lt;&lt; diag.BarometricPressure() &lt;&lt; endl;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        cout &lt;&lt; diag.CoolantTemp() &lt;&lt; endl;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        cout &lt;&lt; diag.EngineLoad() &lt;&lt; endl;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        cout &lt;&lt; diag.FuelAirRatio() &lt;&lt; endl;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        cout &lt;&lt; diag.IntakeManifoldPressure() &lt;&lt; endl;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        cout &lt;&lt; diag.MilesSinceCodesCleared() &lt;&lt; endl;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        cout &lt;&lt; diag.MinutesSinceStart() &lt;&lt; endl;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cout &lt;&lt; diag.ThrottlePosition() &lt;&lt; endl;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        cout &lt;&lt; diag.TimingAdvance() &lt;&lt; endl;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a00ef2661843feaed8f9e160808a3b2b7">Speed</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#acee5a332f6500b3bc5924432a8cb10b5">Rpm</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87">OutsideTemperature</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a61c090792d6fa83d532b7a60349ca180">CheckEngineLight</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a339c1e30d864165ba8c75e8a9c3db470">BarometricPressure</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a3964f618fca7dd147bdc5fc42c52ed6d">CoolantTemp</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a21f361fc2df4b58571b69f2c74572588">EngineLoad</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a5601f4667a7e9af7a02dd829997ccd19">FuelAirRatio</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#ab714358169a647a033ee8d5f9723a4e6">IntakeManifoldPressure</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a9870f53ec8870417471235fe27b52109">MilesSinceCodesCleared</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5">MinutesSinceStart</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#ac8b7e4d350e5b790383c3d0579ccd483">ThrottlePosition</a>() &lt;&lt; endl;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        cout &lt;&lt; diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a1e5f634d1155645494a120fcecee812c">TimingAdvance</a>() &lt;&lt; endl;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        cout &lt;&lt; endl;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        diag.ToggleLanguage();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        diag.ToggleUnits();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#aa223af9d072a565a664d3af1f2909ffc">ToggleLanguage</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        diag.<a class="code" href="classpiagnostics_1_1DiagnosticAdapter.html#a6125307100979e18a0286f4ed0444cb4">ToggleUnits</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a9870f53ec8870417471235fe27b52109"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a9870f53ec8870417471235fe27b52109">piagnostics::DiagnosticAdapter::MilesSinceCodesCleared</a></div><div class="ttdeci">std::string MilesSinceCodesCleared()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00368">DiagnosticAdapter.cpp:368</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a2bf9b6642460423efa066814588c38e5"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a2bf9b6642460423efa066814588c38e5">piagnostics::DiagnosticAdapter::MinutesSinceStart</a></div><div class="ttdeci">std::string MinutesSinceStart()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00375">DiagnosticAdapter.cpp:375</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a1e5f634d1155645494a120fcecee812c"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a1e5f634d1155645494a120fcecee812c">piagnostics::DiagnosticAdapter::TimingAdvance</a></div><div class="ttdeci">std::string TimingAdvance()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00405">DiagnosticAdapter.cpp:405</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_ac8b7e4d350e5b790383c3d0579ccd483"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#ac8b7e4d350e5b790383c3d0579ccd483">piagnostics::DiagnosticAdapter::ThrottlePosition</a></div><div class="ttdeci">std::string ThrottlePosition()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00399">DiagnosticAdapter.cpp:399</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a6125307100979e18a0286f4ed0444cb4"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a6125307100979e18a0286f4ed0444cb4">piagnostics::DiagnosticAdapter::ToggleUnits</a></div><div class="ttdeci">void ToggleUnits()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00415">DiagnosticAdapter.cpp:415</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a00ef2661843feaed8f9e160808a3b2b7"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a00ef2661843feaed8f9e160808a3b2b7">piagnostics::DiagnosticAdapter::Speed</a></div><div class="ttdeci">std::string Speed()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00393">DiagnosticAdapter.cpp:393</a></div></div>
 <div class="ttc" id="namespacepiagnostics_html"><div class="ttname"><a href="namespacepiagnostics.html">piagnostics</a></div><div class="ttdef"><b>Definition:</b> <a href="BluetoothConnection_8cpp_source.html#l00019">BluetoothConnection.cpp:19</a></div></div>
+<div class="ttc" id="test_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00018">test.cpp:18</a></div></div>
+<div class="ttc" id="UsbConnection_8cpp_html"><div class="ttname"><a href="UsbConnection_8cpp.html">UsbConnection.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_ab714358169a647a033ee8d5f9723a4e6"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#ab714358169a647a033ee8d5f9723a4e6">piagnostics::DiagnosticAdapter::IntakeManifoldPressure</a></div><div class="ttdeci">std::string IntakeManifoldPressure()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00360">DiagnosticAdapter.cpp:360</a></div></div>
+<div class="ttc" id="Units_8cpp_html_ac33d2b1fdba15c8bfb494f9cf0ef4190ae6af7b29ffe62b0b607b8fcbe812303c"><div class="ttname"><a href="Units_8cpp.html#ac33d2b1fdba15c8bfb494f9cf0ef4190ae6af7b29ffe62b0b607b8fcbe812303c">Units::Imperial</a></div></div>
+<div class="ttc" id="DiagnosticAdapter_8cpp_html"><div class="ttname"><a href="DiagnosticAdapter_8cpp.html">DiagnosticAdapter.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_aba0c2fe23385004d0c874a8dd1176b87"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#aba0c2fe23385004d0c874a8dd1176b87">piagnostics::DiagnosticAdapter::OutsideTemperature</a></div><div class="ttdeci">std::string OutsideTemperature()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00381">DiagnosticAdapter.cpp:381</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a3964f618fca7dd147bdc5fc42c52ed6d"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a3964f618fca7dd147bdc5fc42c52ed6d">piagnostics::DiagnosticAdapter::CoolantTemp</a></div><div class="ttdeci">std::string CoolantTemp()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00291">DiagnosticAdapter.cpp:291</a></div></div>
+<div class="ttc" id="Language_8cpp_html"><div class="ttname"><a href="Language_8cpp.html">Language.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_aa223af9d072a565a664d3af1f2909ffc"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#aa223af9d072a565a664d3af1f2909ffc">piagnostics::DiagnosticAdapter::ToggleLanguage</a></div><div class="ttdeci">void ToggleLanguage()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00411">DiagnosticAdapter.cpp:411</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_acee5a332f6500b3bc5924432a8cb10b5"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#acee5a332f6500b3bc5924432a8cb10b5">piagnostics::DiagnosticAdapter::Rpm</a></div><div class="ttdeci">std::string Rpm()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00387">DiagnosticAdapter.cpp:387</a></div></div>
+<div class="ttc" id="Units_8cpp_html"><div class="ttname"><a href="Units_8cpp.html">Units.cpp</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a5601f4667a7e9af7a02dd829997ccd19"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a5601f4667a7e9af7a02dd829997ccd19">piagnostics::DiagnosticAdapter::FuelAirRatio</a></div><div class="ttdeci">std::string FuelAirRatio()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00348">DiagnosticAdapter.cpp:348</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a21f361fc2df4b58571b69f2c74572588"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a21f361fc2df4b58571b69f2c74572588">piagnostics::DiagnosticAdapter::EngineLoad</a></div><div class="ttdeci">std::string EngineLoad()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00299">DiagnosticAdapter.cpp:299</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a339c1e30d864165ba8c75e8a9c3db470"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a339c1e30d864165ba8c75e8a9c3db470">piagnostics::DiagnosticAdapter::BarometricPressure</a></div><div class="ttdeci">std::string BarometricPressure()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00268">DiagnosticAdapter.cpp:268</a></div></div>
+<div class="ttc" id="Language_8cpp_html_a315ca917ad583797f709ea477dd28705a49bfa7fcc3d94cb262ab0af5f668b74d"><div class="ttname"><a href="Language_8cpp.html#a315ca917ad583797f709ea477dd28705a49bfa7fcc3d94cb262ab0af5f668b74d">English</a></div><div class="ttdef"><b>Definition:</b> <a href="Language_8cpp_source.html#l00007">Language.cpp:7</a></div></div>
+<div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html_a61c090792d6fa83d532b7a60349ca180"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html#a61c090792d6fa83d532b7a60349ca180">piagnostics::DiagnosticAdapter::CheckEngineLight</a></div><div class="ttdeci">std::string CheckEngineLight()</div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00275">DiagnosticAdapter.cpp:275</a></div></div>
+<div class="ttc" id="Pid_8cpp_html"><div class="ttname"><a href="Pid_8cpp.html">Pid.cpp</a></div></div>
 <div class="ttc" id="classpiagnostics_1_1DiagnosticAdapter_html"><div class="ttname"><a href="classpiagnostics_1_1DiagnosticAdapter.html">piagnostics::DiagnosticAdapter</a></div><div class="ttdef"><b>Definition:</b> <a href="DiagnosticAdapter_8cpp_source.html#l00032">DiagnosticAdapter.cpp:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 15 2015 19:41:55 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2015 00:02:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
