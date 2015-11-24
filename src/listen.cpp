@@ -8,7 +8,7 @@
 
 namespace piagnostics {
 
-/*
+/**
  * Listens for the button to be pressed and notifies a Change instance when this
  * occurs.
  *

@@ -8,6 +8,10 @@ test:
 	$(GCC) src/test.cpp -o bin/test $(CPPFLAGS)
 
 docs:
+	mv doc/doxygen.config .
+	rm -r doc
+	mkdir doc
+	mv doxygen.config doc/
 	doxygen doc/doxygen.config
 
 count:
