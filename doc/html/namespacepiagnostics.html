@@ -313,6 +313,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Listens for the button to be pressed and notifies a Change instance when this occurs.</p>
+<p>The pin to read is hard-coded.</p>
+<p>This function is designed to be run on a separate thread. Though I realize this isn't technically thread-safe (no mutexes), it does not modify any memory locations on the main thread. Therefore, it shouldn't really cause any problems. Additionally, the thread never exits, because it is designed to run the entire time the <a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a> function of Piagnostics is running.</p>
+<p>Note that a second button press immeadiately following the first (&lt;1 sec later) is not effective.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">givenChanges</td><td>a (void) pointer to the <a class="el" href="classpiagnostics_1_1Changes.html">Changes</a> class instance for which to record changes in the language and system of units.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a void pointer to the pthread_t structure for this thread </dd></dl>
 
 <p>Definition at line <a class="el" href="listen_8cpp_source.html#l00031">31</a> of file <a class="el" href="listen_8cpp_source.html">listen.cpp</a>.</p>
 
@@ -399,7 +410,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 24 2015 00:02:35 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 24 2015 00:07:40 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
