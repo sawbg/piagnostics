@@ -1,16 +1,21 @@
 #include <iostream>
 #include <string>
 
+#include "DiagnosticAdapter.cpp"
 #include "Language.cpp"
 #include "Pid.cpp"
-#include "DiagnosticAdapter.cpp"
 #include "Units.cpp"
 #include "UsbConnection.cpp"
 
+using namespace std;
 using namespace piagnostics;
 
+/**
+ * Proof of concept application to be run from either a PC or a Raspberry Pi.
+ *
+ * @return always 0
+ */
 int main() {
-
 	DiagnosticAdapter diag(English, Units::Imperial);
 
 	for(int i = 0; i <= 1; i++) {

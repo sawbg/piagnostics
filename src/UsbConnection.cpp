@@ -39,7 +39,7 @@ namespace piagnostics {
 			 * @return the chip's reply as a vector of unsigned,
 			 * 8-bit integers.
 			 */
-			vector<uint8_t> Fetch(std::string data);
+			std::vector<uint8_t> Fetch(std::string data);
 	};
 
 	std::vector<uint8_t> UsbConnection::Fetch(std::string data) {		
@@ -73,7 +73,7 @@ namespace piagnostics {
 			ret = 0;
 			ftdi_usb_purge_tx_buffer(&ftdic);
 			ftdi_usb_purge_rx_buffer(&ftdic);
-			usleep(50000);
+			usleep(50000);  // THIS LINE IS CRITICAL TO THIS PROGRAM WITH THE PI ONLY
 
 			for (i = 0; i < j; i++) {      
 				ret += ftdi_write_data(&ftdic, tx+i, sizeof(unsigned char) * 1);      

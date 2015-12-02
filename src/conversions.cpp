@@ -1,13 +1,8 @@
 #ifndef CONVERSIONS_H
 #define CONVERSIONS_H
 
-#include <string>
-#include <type_traits>
-
 #include "Pid.cpp"
 #include "Units.cpp"
-
-using namespace std;
 
 namespace piagnostics {
 
